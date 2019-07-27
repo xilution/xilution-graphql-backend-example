@@ -1,6 +1,5 @@
-import "graphql-import-node";
-import * as query from "./query.graphql";
-import * as todo from "./todo.graphql";
-import * as todos from "./todos.graphql";
+import query from "./query";
+import todo from "./todo";
+import todos from "./todos";
 
 export default [query, todo, todos];

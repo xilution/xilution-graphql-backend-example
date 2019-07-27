@@ -15,5 +15,8 @@ module.exports = {
         libraryTarget: "commonjs2",
         path: path.resolve(__dirname, "dist"),
     },
+    stats: {
+        warnings: false
+    },
     target: "node",
 };

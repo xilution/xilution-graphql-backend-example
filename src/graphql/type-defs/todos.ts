@@ -1,3 +1,4 @@
+export default `
 type Todos {
     content: [Todo]
     pageSize: Int
@@ -8,3 +9,4 @@ type Todos {
     firstPage: Boolean
     lastPage: Boolean
 }
+`;

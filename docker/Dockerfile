@@ -12,7 +12,7 @@ COPY tsconfig.json /build
 COPY tslint.json /build
 COPY webpack.config.js /build
 RUN yarn test
-RUN yarn build
+RUN yarn package
 
 FROM mhart/alpine-node:8.10.0
 

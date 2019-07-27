@@ -9,16 +9,8 @@
             "node_modules/@types",
             "src/@types"
         ],
-        "types": [
-            "node",
-            "jest",
-            "hapi__hapi",
-            "lodash"
-        ],
         "esModuleInterop": true,
-        "inlineSourceMap": true,
-        "allowSyntheticDefaultImports": true,
-        "experimentalDecorators": true
+        "skipLibCheck": true
     },
     "include": [
         "src/**/*"

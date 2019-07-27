@@ -1,38 +1,38 @@
-// import {ApolloServer} from "apollo-server-hapi";
-// import * as Boom from "boom";
+import {boomify} from "@hapi/boom";
 import CatboxMemory from "@hapi/catbox-memory";
 import {Server, ServerMethodCache, ServerMethodOptions, ServerOptionsCache} from "@hapi/hapi";
+import {ApolloServer} from "apollo-server-hapi";
 import hash from "object-hash";
 import routes from "./routes";
-// import {getEnvironment} from "./services/environment-service";
+import {getEnvironment} from "./services/environment-service";
 import {getAccessToken} from "./services/xilution-access-token-service";
 
-// import resolvers from "./graphql/resolvers";
-// import typeDefs from "./graphql/type-defs";
+import resolvers from "./graphql/resolvers";
+import typeDefs from "./graphql/type-defs";
 
 const PORT = 3000;
 const HOST = "0.0.0.0";
 
 const init = async () => {
-    // const apollo = new ApolloServer({
-    //     context: async ({request}) => {
-    //         try {
-    //             const environment: string = getEnvironment();
-    //             const accessToken: string = await request.server.methods.getXilutionAccessToken();
-    //
-    //             return ({
-    //                 accessToken,
-    //                 environment,
-    //             });
-    //         } catch (error) {
-    //             return Boom.boomify(error, {
-    //                 statusCode: error.statusCode,
-    //             });
-    //         }
-    //     },
-    //     resolvers,
-    //     typeDefs,
-    // });
+    const apollo = new ApolloServer({
+        context: async ({request}) => {
+            try {
+                const environment: string = getEnvironment();
+                const accessToken: string = await request.server.methods.getXilutionAccessToken();
+
+                return ({
+                    accessToken,
+                    environment,
+                });
+            } catch (error) {
+                return boomify(error, {
+                    statusCode: error.statusCode,
+                });
+            }
+        },
+        resolvers,
+        typeDefs,
+    });
 
     const server = new Server({
         cache: [
@@ -70,11 +70,11 @@ const init = async () => {
 
     await server.route(routes);
 
-    // await apollo.applyMiddleware({
-    //     app: server,
-    // });
-    //
-    // await apollo.installSubscriptionHandlers(server.listener);
+    await apollo.applyMiddleware({
+        app: server,
+    });
+
+    await apollo.installSubscriptionHandlers(server.listener);
 
     await server.start();
     // tslint:disable-next-line:no-console

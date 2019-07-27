@@ -22,6 +22,8 @@
 
 1. Run `yarn start`
     1. You can make changes to the source code and nodemon will automatically restart the server when the changes are saved.
+    1. Open `http://localhost:3000/health` in a browser to verify that the server is running.
+    1. Open `http://localhost:3000/graphql` in a browser to see the Apollo Playground.
 
 ## To build the docker image
 
@@ -30,6 +32,9 @@
 ## To run the docker image
 
 1. Run `yarn docker:start`
+    1. Open `http://localhost/health` to verify that the server is running.
+    1. Because the Docker image was build in production mode, the Apollo Playground is not available.
+    1. The GraphQL endpoint can by accessed at `http://localhost/graphql`.
 
 ## To stop the docker image
 

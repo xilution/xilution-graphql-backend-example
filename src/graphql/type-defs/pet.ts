@@ -1,7 +1,7 @@
 export default `
-type Todo {
+type Pet {
     owningUserId: String
     id: ID
-    text: String
+    name: String
 }
 `;

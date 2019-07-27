@@ -1,5 +1,5 @@
 export default `
 type Query {
-    todos: Todos!
+    pets: Pets!
 }
 `;

@@ -1,6 +1,6 @@
 export default `
-type Todos {
-    content: [Todo]
+type Pets {
+    content: [Pet]
     pageSize: Int
     pageNumber: Int
     totalPages: Int

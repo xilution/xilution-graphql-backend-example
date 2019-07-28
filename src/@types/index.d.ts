@@ -18,4 +18,15 @@ export interface IXilutionThing {
 
 export interface IXilutionFetchThingsResponse {
     content: IXilutionThing[];
+    pageSize: number;
+    pageNumber: number;
+    totalPages: number;
+    numberOfElements: number;
+    totalElements: number;
+    firstPage: boolean;
+    lastPage: boolean;
+}
+
+export interface IPet extends IXilutionThing {
+    name: string;
 }

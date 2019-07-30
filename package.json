@@ -4,8 +4,7 @@
     "description": "An example of how to create a graphql server using Xilution Fox and Beagily",
     "main": "src/index.ts",
     "scripts": {
-        "build": "tsc -p tsconfig.json",
-        "package": "yarn build && webpack-cli --mode production --config webpack.config.js",
+        "build": "tsc -p tsconfig.json && webpack-cli --mode production --config webpack.config.js",
         "clean": "rm -rf dist",
         "docker:logs": "docker logs -f xilution-example-fox-beagily-graphql",
         "docker:build": "docker build -t xilution-example-fox-beagily-graphql -f docker/Dockerfile .",

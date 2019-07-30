@@ -3,6 +3,7 @@
         "target": "es2015",
         "module": "commonjs",
         "moduleResolution": "node",
+        "outDir": "./built",
         "strict": true,
         "baseUrl": "./",
         "typeRoots": [

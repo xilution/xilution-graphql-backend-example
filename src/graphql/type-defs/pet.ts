@@ -1,9 +1,10 @@
 export default `
 type Pet {
-    owningUserId: String!
     id: ID!
-    name: String!
+    owningUserId: String!
     createdAt: String!
+    modifiedAt: String!
+    name: String!
 }
 input NewPet {
     owningUserId: String!

@@ -1,10 +1,6 @@
 built
-dev-ops
 dist
 node_modules
 .gitignore
-config.mk
-makefile
 README.md
-yarn.lock
 yarn-error.log

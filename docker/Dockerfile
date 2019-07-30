@@ -2,6 +2,7 @@ FROM mhart/alpine-node:8.10.0 as build
 
 WORKDIR /build
 
+COPY yarn.lock /build
 COPY package.json /build
 RUN yarn
 

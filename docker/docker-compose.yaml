@@ -5,7 +5,7 @@ services:
         container_name: nginx
         depends_on:
             - xilution-example-fox-beagily-graphql
-        image: nginx
+        image: nginx:1.17.2
         networks:
             - middletier
         ports:

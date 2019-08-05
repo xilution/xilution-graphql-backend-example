@@ -5,12 +5,16 @@
 1. Install Docker Desktop: https://www.docker.com/products/docker-desktop
 1. Install NVM: https://github.com/nvm-sh/nvm
 1. Install Yarn: https://yarnpkg.com
-1. Run through the example in [this blog](https://blog.xilution.com/5018604022235529367) to create a Xilution account and create some Beagily data.
+1. Run through the example in [this blog](https://blog.xilution.com/5018604022235529367) to create a Xilution account and create some [Beagily](https://products.xilution.com/basics/beagily) data.
 1. The following environment variables need to be in scope when the server runs.
     * XILUTION_CLIENT_ID
     * XILUTION_CLIENT_SECRET
 1. Install the [Xilution CLI](https://docs.xilution.com/cli/).
     1. Required if you want to follow the "To run the Docker image on Fox" instructions below.
+
+## To download this repo
+
+1. Run `git clone @xilution/xilution-example-fox-beagily-graphql`, to download this repo.
 
 ## To download repo dependencies
 

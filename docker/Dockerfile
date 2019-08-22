@@ -3,7 +3,7 @@ FROM mhart/alpine-node:8.10.0 as build
 WORKDIR /build
 
 COPY yarn.lock /build
-COPY package.json /build
+COPY package.json yarn.lock /build/
 RUN yarn
 
 COPY __tests__ /build/__tests__

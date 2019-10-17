@@ -14,7 +14,7 @@
         "docker:terminal": "docker exec -ti xilution-example-fox-beagily-graphql sh",
         "lint": "tslint 'src/**/*.ts' '__tests__/**/*.ts'",
         "test": "yarn test:unit",
-        "test:unit": "jest",
+        "test:unit": "jest --testPathPattern ./__tests__/unit/",
         "start": "nodemon --watch src --exec ts-node src/index.ts",
         "debug": "nodemon --watch src --exec ts-node --inspect --debug-brk src/index.ts",
         "verify": "yarn lint && yarn test"

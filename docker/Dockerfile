@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:8.10.0 as build
+FROM mhart/alpine-node:10.16.3 as build
 
 WORKDIR /build
 
@@ -15,7 +15,7 @@ COPY webpack.config.js /build
 RUN yarn test
 RUN yarn build
 
-FROM mhart/alpine-node:8.10.0
+FROM mhart/alpine-node:10.16.3
 
 COPY --from=build /build/dist/server.js /app/server.js
 

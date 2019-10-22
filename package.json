@@ -1,17 +1,17 @@
 {
-    "name": "@xilution/xilution-example-fox-beagily-graphql",
+    "name": "@xilution/xilution-graphql-example",
     "version": "1.0.0",
     "description": "An example of how to create a graphql server using Xilution Fox and Beagily",
     "main": "src/index.ts",
     "scripts": {
         "build": "tsc -p tsconfig.json && webpack-cli --mode production --config webpack.config.js",
         "clean": "rm -rf dist",
-        "docker:logs": "docker logs -f xilution-example-fox-beagily-graphql",
-        "docker:build": "docker build -t xilution-example-fox-beagily-graphql -f docker/Dockerfile .",
+        "docker:logs": "docker logs -f xilution-graphql-example",
+        "docker:build": "docker build -t xilution-graphql-example -f docker/Dockerfile .",
         "docker:start": "docker-compose -f ./docker/docker-compose.yaml up -d",
         "docker:restart": "docker-compose -f ./docker/docker-compose.yaml restart",
         "docker:stop": "docker-compose -f ./docker/docker-compose.yaml down",
-        "docker:terminal": "docker exec -ti xilution-example-fox-beagily-graphql sh",
+        "docker:terminal": "docker exec -ti xilution-graphql-example sh",
         "lint": "tslint 'src/**/*.ts' '__tests__/**/*.ts'",
         "test": "yarn test:unit",
         "test:unit": "jest --testPathPattern ./__tests__/unit/",
@@ -21,12 +21,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/xilution/xilution-example-fox-beagily-graphql"
+        "url": "https://github.com/xilution/xilution-graphql-example"
     },
     "bugs": {
-        "url": "https://github.com/xilution/xilution-example-fox-beagily-graphql/issues"
+        "url": "https://github.com/xilution/xilution-graphql-example/issues"
     },
-    "homepage": "https://github.com/xilution/xilution-example-fox-beagily-graphql",
+    "homepage": "https://github.com/xilution/xilution-graphql-example",
     "devDependencies": {
         "@commitlint/cli": "^7.5.2",
         "@commitlint/config-conventional": "^7.5.0",

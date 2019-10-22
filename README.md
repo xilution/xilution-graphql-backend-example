@@ -1,4 +1,4 @@
-# xilution-example-fox-beagily-graphql
+# xilution-graphql-example
 
 ## Prerequisites
 
@@ -14,7 +14,7 @@
 
 ## To download this repo
 
-1. Run `git clone @xilution/xilution-example-fox-beagily-graphql`, to download this repo.
+1. Run `git clone @xilution/xilution-graphql-example`, to download this repo.
 
 ## To download repo dependencies
 
@@ -32,7 +32,7 @@
     1. Open `http://localhost:3000/graphql` in a browser to see the Apollo Playground.
 
 ## To build the Docker image
-This tags your docker image as `xilution-example-fox-beagily-graphql`.
+This tags your docker image as `xilution-graphql-example`.
 
 1. Run `yarn docker:build`.
 
@@ -57,8 +57,8 @@ You'll need a Docker Hub account to execute the following.
 ## To publish the Docker image to your Docker Hub account
 You'll need a Docker Hub account to execute the following.
 
-1. Run `docker tag xilution-example-fox-beagily-graphql {your-docker-hub-account}/xilution-example-fox-beagily-graphql` to tag the image so it can be pushed to your Docker Hub account.
-1. Run `docker push {your-docker-hub-account}/xilution-example-fox-beagily-graphql` to push the image to your Docker Hub account.
+1. Run `docker tag xilution-graphql-example {your-docker-hub-account}/xilution-graphql-example` to tag the image so it can be pushed to your Docker Hub account.
+1. Run `docker push {your-docker-hub-account}/xilution-graphql-example` to push the image to your Docker Hub account.
 
 ## To run the Docker image on Xilution Fox
 Xilution [Fox](https://products.xilution.com/integration/fox) is a managed API hosting solution that uses Docker to instantiate API server instances.
@@ -87,7 +87,7 @@ Likewise, you deprovision a Fox Instance to stop your API.
         ```json
         {
           "@type": "instance",
-          "name": "xilution-example-fox-beagily-graphql",
+          "name": "xilution-graphql-example",
           "organizationId": "{your-xilution-organization-id}",
           "containerPort": "3000",
           "environment": [
@@ -100,7 +100,7 @@ Likewise, you deprovision a Fox Instance to stop your API.
               "value": "{your-xilution-client-secret}"
             }
           ],
-          "image": "{your-docker-hub-account}/xilution-example-fox-beagily-graphql",
+          "image": "{your-docker-hub-account}/xilution-graphql-example",
           "owningUserId": "{your-xilution-user-id}",
           "stack": "SMALL_STACK"
         }

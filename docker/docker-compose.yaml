@@ -4,7 +4,7 @@ services:
     nginx:
         container_name: nginx
         depends_on:
-            - xilution-example-fox-beagily-graphql
+            - xilution-graphql-example
         image: nginx:1.17.2
         networks:
             - middletier
@@ -12,14 +12,14 @@ services:
             - '80:80'
         volumes:
             - ./nginx.conf:/etc/nginx/nginx.conf
-    xilution-example-fox-beagily-graphql:
+    xilution-graphql-example:
         build: .
-        container_name: xilution-example-fox-beagily-graphql
+        container_name: xilution-graphql-example
         environment:
             - XILUTION_CLIENT_SECRET
             - XILUTION_CLIENT_ID
             - XILUTION_USER_ID
-        image: xilution-example-fox-beagily-graphql
+        image: xilution-graphql-example
         ports:
             - '3000'
         networks:

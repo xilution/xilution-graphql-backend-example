@@ -30,6 +30,7 @@ const init = async () => {
                 });
             }
         },
+        introspection: true,
         resolvers,
         typeDefs,
     });

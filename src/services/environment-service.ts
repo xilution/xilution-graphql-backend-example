@@ -1,1 +1,1 @@
-export const getEnvironment = (): string => "test";
+export const getEnvironment = (): string => "prod";

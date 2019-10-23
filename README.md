@@ -123,9 +123,9 @@ Provisioning is complete when you see the following.
 
 ### Access the Fox Instance
 
-1. Open `https://{your-fox-instance-id}.test.fox.integration.xilution/health` in a browser to verify that the server is running.
+1. Open `https://{your-fox-instance-id}.prod.fox.integration.xilution/health` in a browser to verify that the server is running.
 1. Because the Docker image was build in production mode, the Apollo Playground is not available.
-1. The GraphQL endpoint can by accessed at `https://{your-fox-instance-id}.test.fox.integration.xilution/graphql`.
+1. The GraphQL endpoint can by accessed at `https://{your-fox-instance-id}.prod.fox.integration.xilution/graphql`.
 
 ### Deprovision the Fox Instance
 

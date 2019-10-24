@@ -1,8 +1,9 @@
+.DS_Store
 node_modules
 built
 dist
 yarn-error.log
-src/**/*.js
+xilution-graphql-example-temp.json
 
 # Editor directories and files
 .idea

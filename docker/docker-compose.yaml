@@ -16,6 +16,7 @@ services:
         build: .
         container_name: xilution-graphql-example
         environment:
+            - XILUTION_ENVIRONMENT
             - XILUTION_CLIENT_SECRET
             - XILUTION_CLIENT_ID
             - XILUTION_USER_ID

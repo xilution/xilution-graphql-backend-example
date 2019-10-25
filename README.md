@@ -1,4 +1,5 @@
 # xilution-graphql-example
+An example showing how to build a GraphQL server using Xilution's Beagily and Fox.
 
 ## Prerequisites
 
@@ -7,7 +8,7 @@
 1. Install Yarn: https://yarnpkg.com
 1. Run through the example in [this blog](https://blog.xilution.com/5018604022235529367) to create a Xilution account and create some [Beagily](https://products.xilution.com/basics/beagily) data.
 
-The following are required if you want to follow the "To host this example on Xilution Fox" instructions below.
+The following are required if you want to follow the "Xilution Fox" instructions below.
 
 1. Create Xilution Account(s)
     1. Open [https://prod.regiser.xilution.com](https://prod.regiser.xilution.com) to create a Prod Xilution account.
@@ -16,19 +17,21 @@ The following are required if you want to follow the "To host this example on Xi
 1. Install the Xilution CLI: https://docs.xilution.com/cli/
 1. Install jq: https://stedolan.github.io/jq/
 
-## To download this repo
+## General
+
+### To download this repo
 
 1. Run `git clone @xilution/xilution-graphql-example`, to download this repo.
 
-## To download repo dependencies
+### To download repo dependencies
 
 1. Run `yarn install` to download dependencies.
 
-## To verify the source code
+### To verify the source code
 
 1. Run `yarn verify`.
 
-## To run the server and make live updates
+### To run the server and make live updates
 
 1. Run `yarn start`.
     1. You can make changes to the source code and nodemon will automatically restart the server when the changes are saved.
@@ -36,12 +39,14 @@ The following are required if you want to follow the "To host this example on Xi
     1. Open `http://localhost:3000/graphql` in a browser to see the Apollo Playground.
     1. `Ctrl-c` to stop.
 
-## To build the Docker image
+## Docker
+
+### To build the Docker image
 This tags your docker image as `xilution-graphql-example`.
 
 1. Run `yarn docker:build`.
 
-## To run the Docker image locally
+### To run the Docker image locally
 Uses `docker-compose` to start an NGINX reverse proxy and your docker image.
 
 1. Run `yarn docker:start`.
@@ -50,16 +55,16 @@ Uses `docker-compose` to start an NGINX reverse proxy and your docker image.
     1. Because the Docker image was build in production mode, the Apollo Playground is not available.
     1. The GraphQL endpoint can by accessed at `http://localhost/graphql`.
 
-## To stop the Docker image
+### To stop the Docker image
 
 1. Run `yarn docker:stop`.
 
-## To publish the Docker image to Docker Hub
+### To publish the Docker image to Docker Hub
 You'll need a [Docker Hub](https://hub.docker.com/) account to execute the following.
 
 1. Run `yarn docker:publish` to push the image to your Docker Hub account.
 
-## To host this example on Xilution Fox
+## Xilution Fox
 Xilution [Fox](https://products.xilution.com/integration/fox) is a managed API hosting solution that uses Docker to instantiate API server instances.
 Fox can pull a Docker image from your Docker Hub account.
 To grant Fox pull access the Docker image, either make the image public or add `tbrunia` as a [collaborator](https://docs-stage.docker.com/v17.12/docker-hub/repos/#collaborators-and-their-role).
@@ -124,3 +129,7 @@ Deprovisioning is complete when you see the following.
 ### Delete the Fox Instance
 
 1. Run `yarn xln:delete-instance`, to delete the Fox instance.
+
+---
+Copyright 2019 Teapot, LLC.  
+Xilution is a DBA of Teapot, LLC.

@@ -7,14 +7,12 @@
 1. Install Yarn: https://yarnpkg.com
 1. Run through the example in [this blog](https://blog.xilution.com/5018604022235529367) to create a Xilution account and create some [Beagily](https://products.xilution.com/basics/beagily) data.
 
-The following environment variables need to be in scope when the server runs locally.
+The following are required if you want to follow the "To host this example on Xilution Fox" instructions below.
 
-* XILUTION_ENVIRONMENT
-* XILUTION_CLIENT_ID
-* XILUTION_CLIENT_SECRET
-
-The following are required if you want to follow the "To run the Docker image on Fox" instructions below.
-
+1. Create Xilution Account(s)
+    1. Open [https://prod.regiser.xilution.com](https://prod.regiser.xilution.com) to create a Prod Xilution account.
+    1. Open [https://test.regiser.xilution.com](https://test.regiser.xilution.com) to create a Test Xilution account.
+    * Note: Xilution Test and Prod accounts are not synchronized.
 1. Install the Xilution CLI: https://docs.xilution.com/cli/
 1. Install jq: https://stedolan.github.io/jq/
 

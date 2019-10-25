@@ -7,7 +7,7 @@ services:
             - xilution-graphql-example
         image: nginx:1.17.2
         networks:
-            - middletier
+            - xilution-graphql-example
         ports:
             - '80:80'
         volumes:
@@ -24,8 +24,8 @@ services:
         ports:
             - '3000'
         networks:
-            - middletier
+            - xilution-graphql-example
 
 networks:
-    middletier:
+    xilution-graphql-example:
         driver: bridge

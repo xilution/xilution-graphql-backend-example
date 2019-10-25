@@ -1,22 +1,26 @@
 const path = require("path");
 
 module.exports = {
-    entry: "./built/index.js",
+    entry: "./src/index.ts",
     module: {
         rules: [
             {
                 exclude: /node_modules/,
-                test: /\.js$/,
+                test: /\.ts$/,
+                loader: "ts-loader",
             },
         ],
     },
     output: {
         filename: "server.js",
         libraryTarget: "commonjs2",
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "./dist"),
     },
     stats: {
         warnings: false
+    },
+    resolve: {
+        extensions: [ ".mjs", ".tsx", ".ts", ".js" ],
     },
     target: "node",
 };

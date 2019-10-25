@@ -3,7 +3,9 @@
     "extends": [
         "tslint:recommended"
     ],
-    "jsRules": {},
-    "rules": {},
-    "rulesDirectory": []
+    "rules": {
+        "jsx-no-lambda": false,
+        "jsx-no-multiline-js": false,
+        "max-line-length": false
+    }
 }

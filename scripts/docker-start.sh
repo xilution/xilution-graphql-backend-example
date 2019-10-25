@@ -1,32 +1,15 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 set -e
 
+if [ $# -lt 3 ]; then
+  echo "Usage: yarn docker:start {environment} {client_id} {client_secret}"
+  exit 1
+fi
+
 environment=${1}
+client_id=${2}
+client_secret=${3}
 
-if [[ -z ${environment} ]]; then
-  echo "Error! Xilution environment is required"
-  echo "Usage: yarn xln:create-fox-instance {environment} {user_id} {client_id} {client_secret}"
-  exit 1
-fi
-
-client_id=${3}
-
-if [[ -z ${client_id} ]]; then
-  echo "Error! Client id is required"
-  echo "Usage: yarn xln:create-fox-instance {environment} {user_id} {client_id} {client_secret}"
-  exit 1
-fi
-
-client_secret=${4}
-
-if [[ -z ${client_secret} ]]; then
-  echo "Error! Client secret is required"
-  echo "Usage: yarn xln:create-fox-instance {environment} {user_id} {client_id} {client_secret}"
-  exit 1
-fi
-
-XILUTION_ENVIRONMENT=${environment} \
-XILUTION_CLIENT_SECRET=${client_secret} \
-XILUTION_CLIENT_ID=${client_id} \
-docker-compose -f ./docker/docker-compose.yaml up -d
+XILUTION_ENVIRONMENT=${environment} XILUTION_CLIENT_SECRET=${client_secret} XILUTION_CLIENT_ID=${client_id} \
+  docker-compose -f ./docker/docker-compose.yaml up -d

@@ -1,6 +1,5 @@
 .DS_Store
 node_modules
-built
 dist
 yarn-error.log
 xilution-graphql-example-temp.json

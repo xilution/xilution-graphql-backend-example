@@ -1,14 +1,13 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 set -e
 
-environment=${1}
-
-if [[ -z ${environment} ]]; then
-  echo "Error! Xilution environment is required"
+if [ $# -lt 3 ]; then
   echo "Usage: yarn xln:show-fox-activation {environment}"
   exit 1
 fi
+
+environment=${1}
 
 xln-cli api core account_management list_product_activations \
   --page_number=0 \

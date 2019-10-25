@@ -1,5 +1,5 @@
 {
-    "name": "@xilution/xilution-graphql-example",
+    "name": "@xilution/xilution-graphql-backend-example",
     "version": "1.0.0",
     "description": "An example showing how to build a graphql server using Xilution's Beagily and Fox.",
     "scripts": {
@@ -26,12 +26,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/xilution/xilution-graphql-example"
+        "url": "https://github.com/xilution/xilution-graphql-backend-example"
     },
     "bugs": {
-        "url": "https://github.com/xilution/xilution-graphql-example/issues"
+        "url": "https://github.com/xilution/xilution-graphql-backend-example/issues"
     },
-    "homepage": "https://github.com/xilution/xilution-graphql-example",
+    "homepage": "https://github.com/xilution/xilution-graphql-backend-example",
     "dependencies": {
         "@hapi/boom": "^7.4.2",
         "@hapi/catbox-memory": "^4.1.0",

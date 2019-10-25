@@ -9,7 +9,7 @@ fi
 
 docker_hub_account=${1}
 
-echo "Please enter your Docker Hub account password to publish xilution-graphql-example."
+echo "Please enter your Docker Hub account password to publish xilution-graphql-backend-example."
 docker login -u "${docker_hub_account}"
-docker tag xilution-graphql-example "${docker_hub_account}"/xilution-graphql-example
-docker push "${docker_hub_account}"/xilution-graphql-example
+docker tag xilution-graphql-backend-example "${docker_hub_account}"/xilution-graphql-backend-example
+docker push "${docker_hub_account}"/xilution-graphql-backend-example

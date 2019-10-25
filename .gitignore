@@ -2,7 +2,7 @@
 node_modules
 dist
 yarn-error.log
-xilution-graphql-example-temp.json
+xilution-graphql-backend-example-temp.json
 
 # Editor directories and files
 .idea

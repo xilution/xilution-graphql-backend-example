@@ -16,7 +16,7 @@ docker_hub_account=${6}
 
 echo "{
   \"@type\": \"instance\",
-  \"name\": \"xilution-graphql-example\",
+  \"name\": \"xilution-graphql-backend-example\",
   \"organizationId\": \"${organization_id}\",
   \"containerPort\": \"3000\",
   \"environment\": [
@@ -29,14 +29,14 @@ echo "{
       \"value\": \"${client_secret}\"
     }
   ],
-  \"image\": \"${docker_hub_account}/xilution-graphql-example\",
+  \"image\": \"${docker_hub_account}/xilution-graphql-backend-example\",
   \"owningUserId\": \"${owning_user_id}\",
   \"stack\": \"SMALL_STACK\"
-}" >./xilution-graphql-example-temp.json
+}" >./xilution-graphql-backend-example-temp.json
 
 xln-cli api integration fox create_instance \
   --organization_id "${organization_id}" \
-  --input_file ./xilution-graphql-example-temp.json \
+  --input_file ./xilution-graphql-backend-example-temp.json \
   -p "${environment}" | jq '. | {id: .id, name: .name}'
 
-rm -rf ./xilution-graphql-example-temp.json
+rm -rf ./xilution-graphql-backend-example-temp.json

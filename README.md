@@ -1,4 +1,4 @@
-# xilution-graphql-example
+# xilution-graphql-backend-example
 An example showing how to build a GraphQL server using Xilution's Beagily and Fox.
 
 ## Prerequisites
@@ -21,7 +21,7 @@ The following are required if you want to follow the "Xilution Fox" instructions
 
 ### To download this repo
 
-1. Run `git clone @xilution/xilution-graphql-example`, to download this repo.
+1. Run `git clone @xilution/xilution-graphql-backend-example`, to download this repo.
 
 ### To download repo dependencies
 
@@ -42,7 +42,7 @@ The following are required if you want to follow the "Xilution Fox" instructions
 ## Docker
 
 ### To build the Docker image
-This tags your docker image as `xilution-graphql-example`.
+This tags your docker image as `xilution-graphql-backend-example`.
 
 1. Run `yarn docker:build`.
 
@@ -83,7 +83,7 @@ You provision a Fox Instance to start your API.
 Likewise, you deprovision a Fox Instance to stop your API.
 
 1. Run `yarn xln:show-instances` to see your Fox instances.
-    1. If you don't have a `xilution-graphql-example` Fox instance, run `yarn xln:create-instance` to create a new Fox instance.
+    1. If you don't have a `xilution-graphql-backend-example` Fox instance, run `yarn xln:create-instance` to create a new Fox instance.
     Take note of the `id` of the new instance.
     You'll need it in the next step to provision the instance.
 

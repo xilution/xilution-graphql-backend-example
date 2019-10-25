@@ -4,28 +4,28 @@ services:
     nginx:
         container_name: nginx
         depends_on:
-            - xilution-graphql-example
+            - xilution-graphql-backend-example
         image: nginx:1.17.2
         networks:
-            - xilution-graphql-example
+            - xilution-graphql-backend-example
         ports:
             - '80:80'
         volumes:
             - ./nginx.conf:/etc/nginx/nginx.conf
-    xilution-graphql-example:
+    xilution-graphql-backend-example:
         build: .
-        container_name: xilution-graphql-example
+        container_name: xilution-graphql-backend-example
         environment:
             - XILUTION_ENVIRONMENT
             - XILUTION_CLIENT_SECRET
             - XILUTION_CLIENT_ID
             - XILUTION_USER_ID
-        image: xilution-graphql-example
+        image: xilution-graphql-backend-example
         ports:
             - '3000'
         networks:
-            - xilution-graphql-example
+            - xilution-graphql-backend-example
 
 networks:
-    xilution-graphql-example:
+    xilution-graphql-backend-example:
         driver: bridge

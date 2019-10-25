@@ -3,5 +3,5 @@
 set -e
 
 docker build \
-  -t xilution-graphql-example \
+  -t xilution-graphql-backend-example \
   -f docker/Dockerfile .

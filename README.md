@@ -32,7 +32,7 @@ The following are required if you want to follow the "To run the Docker image on
 
 ## To run the server and make live updates
 
-1. Run `yarn start`
+1. Run `yarn start`.
     1. You can make changes to the source code and nodemon will automatically restart the server when the changes are saved.
     1. Open `http://localhost:3000/health` in a browser to verify that the server is running.
     1. Open `http://localhost:3000/graphql` in a browser to see the Apollo Playground.

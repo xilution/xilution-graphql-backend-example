@@ -1,5 +1,31 @@
-# xilution-graphql-backend-example
-An example showing how to build a GraphQL server using Xilution's Beagily and Fox.
+<h1 align="center" style="border-bottom: none;">xilution-graphql-backend-example</h1>
+<p>
+An example demonstrating how to build a GraphQL backend server using Xilution's Beagily and Fox.
+<p>
+<p align="center">
+  <a href="https://github.com/xilution/xilution-graphql-backend-example/issues">
+    <img alt="Issues" src="https://img.shields.io/github/issues/xilution/xilution-graphql-backend-example.svg">
+  </a>
+  <a href="https://github.com/xilution/xilution-graphql-backend-example/network">
+    <img alt="Forks" src="https://img.shields.io/github/forks/xilution/xilution-graphql-backend-example.svg">
+  </a>
+  <a href="https://github.com/xilution/xilution-graphql-backend-example/stargazers">
+    <img alt="Stars" src="https://img.shields.io/github/stars/xilution/xilution-graphql-backend-example.svg">
+  </a>
+  <a href="https://github.com/xilution/xilution-graphql-backend-example/blob/master/LICENSE">
+    <img alt="License" src="https://img.shields.io/github/license/xilution/xilution-graphql-backend-example.svg">
+  </a>
+</p>
+<p align="center">
+  <a href="https://travis-ci.org/xilution/xilution-graphql-backend-example">
+    <img alt="Travis" src="https://img.shields.io/travis/xilution/xilution-graphql-backend-example.svg">
+  </a>
+</p>
+<p align="center">
+  <a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fxilution%2Fxilution-graphql-backend-example">
+    <img alt="Tweet" src="https://img.shields.io/twitter/url/https/github.com/xilution/xilution-graphql-backend-example.svg?style=social">
+  </a>
+</p>
 
 ## Prerequisites
 

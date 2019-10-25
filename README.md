@@ -32,14 +32,14 @@ An example demonstrating how to build a GraphQL backend server using Xilution's 
 1. Install Docker Desktop: https://www.docker.com/products/docker-desktop
 1. Install NVM: https://github.com/nvm-sh/nvm
 1. Install Yarn: https://yarnpkg.com
-1. Run through the example in [this blog](https://blog.xilution.com/5018604022235529367) to create a Xilution account and create some [Beagily](https://products.xilution.com/basics/beagily) data.
-
-The following are required if you want to follow the "Xilution Fox" instructions below.
-
-1. Create Xilution Account(s)
+1. A Xilution Account
     1. Open [https://prod.regiser.xilution.com](https://prod.regiser.xilution.com) to create a Prod Xilution account.
     1. Open [https://test.regiser.xilution.com](https://test.regiser.xilution.com) to create a Test Xilution account.
     * Note: Xilution Test and Prod accounts are not synchronized.
+1. Run through the example in [this blog](https://blog.xilution.com/5018604022235529367) to create some [Beagily](https://products.xilution.com/basics/beagily) data.
+
+The following are required if you want to follow the "Xilution Fox" instructions below.
+
 1. Install the Xilution CLI: https://docs.xilution.com/cli/
 1. Install jq: https://stedolan.github.io/jq/
 

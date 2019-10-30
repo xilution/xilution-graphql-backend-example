@@ -26,10 +26,16 @@ if [[ -z "${XILUTION_ACCOUNT_USER_ID}" ]]; then
   exit 1
 fi
 
+if [[ -z "${XILUTION_API_USER_ID}" ]]; then
+  echo "XILUTION_API_USER_ID not found in .env"
+  exit 1
+fi
+
 environment=${XILUTION_ENVIRONMENT}
 access_token=${XILUTION_ACCOUNT_ACCESS_TOKEN}
 sub_organization_id=${XILUTION_SUB_ORGANIZATION_ID}
-user_id=${XILUTION_ACCOUNT_USER_ID}
+account_user_id=${XILUTION_ACCOUNT_USER_ID}
+api_user_id=${XILUTION_API_USER_ID}
 
 post_response=$(curl -sSL -D - \
   -X POST \
@@ -41,8 +47,8 @@ post_response=$(curl -sSL -D - \
     \"grants\": [\"password\"],
     \"redirectUris\": [],
     \"organizationId\": \"${sub_organization_id}\",
-    \"clientUserId\": \"${user_id}\",
-    \"owningUserId\": \"${user_id}\",
+    \"clientUserId\": \"${api_user_id}\",
+    \"owningUserId\": \"${account_user_id}\",
     \"active\": true
   }" \
   "https://${environment}.hippo.basics.api.xilution.com/organizations/${sub_organization_id}/clients" \

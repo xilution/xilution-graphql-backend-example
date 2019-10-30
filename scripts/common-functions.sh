@@ -102,8 +102,8 @@ elephant_activate() {
     exit 1
   fi
 
-  if [[ -z "${XILUTION_API_ACCESS_TOKEN}" ]]; then
-    echo "XILUTION_API_ACCESS_TOKEN not found in .env"
+  if [[ -z "${XILUTION_ACCOUNT_ACCESS_TOKEN}" ]]; then
+    echo "XILUTION_ACCOUNT_ACCESS_TOKEN not found in .env"
     exit 1
   fi
 
@@ -119,7 +119,7 @@ elephant_activate() {
   fi
 
   environment=${XILUTION_ENVIRONMENT}
-  access_token=${XILUTION_API_ACCESS_TOKEN}
+  access_token=${XILUTION_ACCOUNT_ACCESS_TOKEN}
   sub_organization_id=${XILUTION_SUB_ORGANIZATION_ID}
   product_id=${1}
 
@@ -140,8 +140,8 @@ elephant_deactivate() {
     exit 1
   fi
 
-  if [[ -z "${XILUTION_API_ACCESS_TOKEN}" ]]; then
-    echo "XILUTION_API_ACCESS_TOKEN not found in .env"
+  if [[ -z "${XILUTION_ACCOUNT_ACCESS_TOKEN}" ]]; then
+    echo "XILUTION_ACCOUNT_ACCESS_TOKEN not found in .env"
     exit 1
   fi
 
@@ -157,7 +157,7 @@ elephant_deactivate() {
   fi
 
   environment=${XILUTION_ENVIRONMENT}
-  access_token=${XILUTION_API_ACCESS_TOKEN}
+  access_token=${XILUTION_ACCOUNT_ACCESS_TOKEN}
   sub_organization_id=${XILUTION_SUB_ORGANIZATION_ID}
   product_id=${1}
 
@@ -178,8 +178,8 @@ elephant_show_activation() {
     exit 1
   fi
 
-  if [[ -z "${XILUTION_API_ACCESS_TOKEN}" ]]; then
-    echo "XILUTION_API_ACCESS_TOKEN not found in .env"
+  if [[ -z "${XILUTION_ACCOUNT_ACCESS_TOKEN}" ]]; then
+    echo "XILUTION_ACCOUNT_ACCESS_TOKEN not found in .env"
     exit 1
   fi
 
@@ -195,14 +195,14 @@ elephant_show_activation() {
   fi
 
   environment=${XILUTION_ENVIRONMENT}
-  access_token=${XILUTION_API_ACCESS_TOKEN}
+  access_token=${XILUTION_ACCOUNT_ACCESS_TOKEN}
   sub_organization_id=${XILUTION_SUB_ORGANIZATION_ID}
   product_id=${1}
 
   curl -s \
     -X GET \
     -H "Authorization: Bearer ${access_token}" \
-    "https://${environment}.account-management.core.api.xilution.com/organizations/${sub_organization_id}/activations?page-number=0&page-size=10" |
+    "https://${environment}.elephant.basics.api.xilution.com/organizations/${sub_organization_id}/activations?page-number=0&page-size=10" |
     jq ".content | map(select(.productId == \"${product_id}\")) | if (. | length > 0) then .[] .effective else \"Not active.\" end"
 }
 

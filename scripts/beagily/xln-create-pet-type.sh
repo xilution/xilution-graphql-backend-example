@@ -18,7 +18,7 @@ environment=${XILUTION_ENVIRONMENT}
 access_token=${XILUTION_API_ACCESS_TOKEN}
 
 curl -s \
-  -X POST \
+  -X PUT \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer ${access_token}" \
   -d "{

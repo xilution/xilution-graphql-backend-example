@@ -19,8 +19,8 @@ if [[ -z "${XILUTION_SUB_ORGANIZATION_ID}" ]]; then
   exit 1
 fi
 
-if [[ -z "${XILUTION_ACCOUNT_USER_ID}" ]]; then
-  echo "XILUTION_ACCOUNT_USER_ID not found in .env"
+if [[ -z "${XILUTION_API_USER_ID}" ]]; then
+  echo "XILUTION_API_USER_ID not found in .env"
   exit 1
 fi
 
@@ -31,7 +31,7 @@ fi
 
 environment=${XILUTION_ENVIRONMENT}
 access_token=${XILUTION_API_ACCESS_TOKEN}
-user_id=${XILUTION_ACCOUNT_USER_ID}
+user_id=${XILUTION_API_USER_ID}
 name=${1}
 
 curl -s \

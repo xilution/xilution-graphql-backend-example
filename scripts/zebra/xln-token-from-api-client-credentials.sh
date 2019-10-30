@@ -37,8 +37,6 @@ response=$(curl -s \
   -d "grant_type=client_credentials&client_id=${client_id}&client_secret=${client_secret}&scope=read write" \
   "https://${environment}.zebra.basics.api.xilution.com/organizations/${sub_organization_id}/oauth/token")
 
-echo "${response}"
-
 echo "${response}" |
   jq "{ xilution_api_access_token: .access_token }"
 

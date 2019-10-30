@@ -188,6 +188,9 @@ TODO - add features
 
     1. Run `yarn xln:beagily:activate`.
 
+    * To see the Rhino activation status, run `yarn xln:beagily:show-activation` to see the Rhino activation status.
+    * To deactivate Rhino, run `yarn xln:beagily:deactivate`.
+
 1. Create a Beagily Pet Type
 
     1. Run `yarn xln:beagily:create-pet-type`.
@@ -196,6 +199,15 @@ TODO - add features
 
     1. Run `yarn xln:beagily:create-pet {name}` passing some different pet names to prime with Beagily data store with some data. 
         * {name} is a pet's name.
+
+1. Activate Zebra
+
+    Xilution [Zebra](https://products.xilution.com/basics/zebra) is part of Xilution's IAM suite and is used to authenticate and authorize clients and users.
+
+    1. Run `yarn xln:zebra:activate`.
+
+    * To see the Rhino activation status, run `yarn xln:zebra:show-activation` to see the Rhino activation status.
+    * To deactivate Rhino, run `yarn xln:zebra:deactivate`.
 
 ## Running Locally
 

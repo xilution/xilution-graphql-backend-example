@@ -128,7 +128,7 @@ elephant_activate() {
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer ${access_token}" \
     -d "{}" \
-    "https://${environment}.elephant.basics.api.xilution.com/organizations/${sub_organization_id}/activate/${product_id}" |
+    "https://${environment}.elephant.basics.api.xilution.com/organizations/${sub_organization_id}/products/${product_id}/activate" |
     jq '.effective'
 }
 
@@ -166,7 +166,7 @@ elephant_deactivate() {
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer ${access_token}" \
     -d "{}" \
-    "https://${environment}.elephant.basics.api.xilution.com/organizations/${sub_organization_id}/deactivate/${product_id}" |
+    "https://${environment}.elephant.basics.api.xilution.com/organizations/${sub_organization_id}/products/${product_id}/deactivate" |
     jq '.effective'
 }
 

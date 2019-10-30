@@ -22,6 +22,7 @@ fi
 environment=${XILUTION_ENVIRONMENT}
 sub_organization_id=${XILUTION_SUB_ORGANIZATION_ID}
 client_id=${XILUTION_UI_CLIENT_ID}
+echo -n Username:
 read -r username
 echo -n Password:
 read -rs password
@@ -32,4 +33,4 @@ curl -s \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -d "grant_type=password&client_id=${client_id}&username=${username}&password=${password}&scope=read write" \
   "https://${environment}.zebra.basics.api.xilution.com/organizations/${sub_organization_id}/oauth/token" |
-  jq "{ access_token: .access_token, user_id: .user.id }"
+  jq "{ access_token: .access_token }"

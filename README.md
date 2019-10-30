@@ -154,6 +154,8 @@ TODO - add features
     
     * To see the sub-organization's users run, `yarn xln:rhino:show-users`.
     * To delete a sub-organization's user run, `yarn xln:rhino:delete-user {user_id}`.
+    
+    * TODO - make a note about needing a credit card in Prod.
 
 1. Verify the New User's Email Address
 
@@ -211,9 +213,13 @@ TODO - add features
 
 ## Running Locally
 
-1. Run `source .env`.
+1. Run `export $(grep -v '^#' .env | xargs)`.
 
     * Requires the Set Up step to be complete.
+
+1. Run `yarn xln:zebra:token-from-user-credentials` to acquire an access token with your sub-account user credentials.
+
+    * You'll use these credentials when you access the API.
 
 1. Run `yarn start`.
 

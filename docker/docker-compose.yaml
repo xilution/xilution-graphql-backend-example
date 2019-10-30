@@ -17,9 +17,8 @@ services:
         container_name: xilution-graphql-backend-example
         environment:
             - XILUTION_ENVIRONMENT
-            - XILUTION_CLIENT_SECRET
-            - XILUTION_CLIENT_ID
-            - XILUTION_USER_ID
+            - XILUTION_API_CLIENT_ID
+            - XILUTION_API_CLIENT_SECRET
         image: xilution-graphql-backend-example
         ports:
             - '3000'

@@ -7,5 +7,8 @@ export const get: ServerRoute = {
         status: "API_HEALTHY",
     }),
     method: "GET",
+    options: {
+        auth: false,
+    },
     path: PATH,
 };

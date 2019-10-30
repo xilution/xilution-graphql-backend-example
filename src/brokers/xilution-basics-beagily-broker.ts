@@ -1,13 +1,8 @@
-import {AxiosResponse} from "axios";
+import axios, {AxiosResponse} from "axios";
+import {stringify} from "query-string";
 import {IXilutionThing} from "../@types";
-import {del, get, post, put} from "./axios-adapters";
-import {
-    buildDeleteThingUri,
-    buildFetchThingsUri,
-    buildGetThingUri,
-    buildPostThingUri,
-    buildPutThingUri,
-} from "./xilution-uri-builder";
+
+const SUB_DOMAIN = `beagily.basics.api.xilution.com`;
 
 export const fetchThings = async (
     accessToken: string,
@@ -17,15 +12,33 @@ export const fetchThings = async (
     query: string,
     pageNumber: number,
     pageSize: number,
-    // tslint:disable-next-line:max-line-length
-): Promise<AxiosResponse> => await get(buildFetchThingsUri(environment, type, sort, query, pageNumber, pageSize), accessToken);
+): Promise<AxiosResponse> => await axios.get(
+    `https://${environment}.${SUB_DOMAIN}/things?${stringify({
+        "page-number": pageNumber,
+        "page-size": pageSize,
+        "q": query,
+        "sort": sort,
+        "type": type,
+    })}`, {
+        headers: {
+            Authorization: `Bearer ${accessToken}`,
+        },
+        validateStatus: () => true,
+    });
 
 export const postThing = async (
     accessToken: string,
     environment: string,
     type: string,
     thing: IXilutionThing,
-): Promise<AxiosResponse> => await post(buildPostThingUri(environment, type), thing, accessToken);
+): Promise<AxiosResponse> => await axios.post(
+    `https://${environment}.${SUB_DOMAIN}/things?${stringify({type})}`, thing, {
+        headers: {
+            Authorization: `Bearer ${accessToken}`,
+        },
+        validateStatus: () => true,
+    },
+);
 
 export const putThing = async (
     accessToken: string,
@@ -33,18 +46,39 @@ export const putThing = async (
     thingId: string,
     type: string,
     thing: IXilutionThing,
-): Promise<AxiosResponse> => await put(buildPutThingUri(environment, thingId, type), thing, accessToken);
+): Promise<AxiosResponse> => await axios.put(
+    `https://${environment}.${SUB_DOMAIN}/things/${thingId}?${stringify({type})}`, thing, {
+        headers: {
+            Authorization: `Bearer ${accessToken}`,
+        },
+        validateStatus: () => true,
+    },
+);
 
 export const getThing = async (
     accessToken: string,
     environment: string,
     thingId: string,
     type: string,
-): Promise<AxiosResponse> => await get(buildGetThingUri(environment, thingId, type), accessToken);
+): Promise<AxiosResponse> => await axios.get(
+    `https://${environment}.${SUB_DOMAIN}/things/${thingId}?${stringify({type})}`, {
+        headers: {
+            Authorization: `Bearer ${accessToken}`,
+        },
+        validateStatus: () => true,
+    },
+);
 
 export const deleteThing = async (
     accessToken: string,
     environment: string,
     thingId: string,
     type: string,
-): Promise<AxiosResponse> => await del(buildDeleteThingUri(environment, thingId, type), accessToken);
+): Promise<AxiosResponse> => await axios.delete(
+    `https://${environment}.${SUB_DOMAIN}/things/${thingId}?${stringify({type})}`, {
+        headers: {
+            Authorization: `Bearer ${accessToken}`,
+        },
+        validateStatus: () => true,
+    },
+);

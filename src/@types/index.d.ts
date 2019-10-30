@@ -1,7 +1,3 @@
-export interface IXilutionToken {
-    access_token: string;
-}
-
 export interface IXilutionLink {
     rel: string;
     href: string;
@@ -14,6 +10,29 @@ export interface IXilutionThing {
     createdAt?: string;
     modifiedAt?: string;
     links?: IXilutionLink[];
+}
+
+export interface IXilutionOrganization extends IXilutionThing {
+    name: string;
+}
+
+export interface IXilutionClient extends IXilutionThing {
+    name: string;
+}
+
+export interface IXilutionUser extends IXilutionThing {
+    firstName: string;
+    lastName: string;
+}
+
+export interface IXilutionTokenResponse {
+    access_token: string;
+}
+
+export interface IXilutionAuthenticationResponse {
+    organization: IXilutionOrganization;
+    client: IXilutionClient;
+    user: IXilutionUser;
 }
 
 export interface IXilutionFetchThingsResponse {

@@ -1,7 +1,5 @@
+import axios, {AxiosResponse} from "axios";
 import {IPet, IXilutionFetchThingsResponse} from "../@types";
-
-import {AxiosResponse} from "axios";
-import {get} from "../brokers/axios-adapters";
 import {deleteThing, fetchThings, getThing, postThing, putThing} from "../brokers/xilution-basics-beagily-broker";
 import {ServiceError} from "./service-error";
 
@@ -15,7 +13,6 @@ export const fetchPets = async (
     pageNumber: number,
     pageSize: number,
 ): Promise<IXilutionFetchThingsResponse> => {
-    // tslint:disable-next-line:max-line-length
     const fetchThingsResponse: AxiosResponse = await fetchThings(accessToken, environment, TYPE, sort, query, pageNumber, pageSize);
 
     if (fetchThingsResponse.status !== 200) {
@@ -45,7 +42,12 @@ export const createPet = async (
 
     // TODO - need to update Beagily to return a Location header with type included. This is a Beagily bug.
     const getThingResponse: AxiosResponse =
-        await get(`${postThingResponse.headers.location}?type=${TYPE}`, accessToken);
+        await axios.get(`${postThingResponse.headers.location}?type=${TYPE}`, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`,
+            },
+            validateStatus: () => true,
+        });
 
     if (getThingResponse.status !== 200) {
         throw new ServiceError(

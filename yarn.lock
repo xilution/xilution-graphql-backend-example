@@ -187,7 +187,7 @@
   dependencies:
     "@hapi/hoek" "8.x.x"
 
-"@hapi/boom@7.x.x":
+"@hapi/boom@7.x.x", "@hapi/boom@^7.4.2":
   version "7.4.11"
   resolved "https://registry.yarnpkg.com/@hapi/boom/-/boom-7.4.11.tgz#37af8417eb9416aef3367aa60fa04a1a9f1fc262"
   integrity sha512-VSU/Cnj1DXouukYxxkes4nNJonCnlogHvIff1v1RVoN4xzkKhMXX+GRmb3NyH1iar10I9WFPDv2JPwfH3GaV0A==
@@ -302,6 +302,11 @@
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-8.3.2.tgz#91e7188edebc5d876f0b91a860f555ff06f0782b"
   integrity sha512-NP5SG4bzix+EtSMtcudp8TvI0lB46mXNo8uFpTDw6tqxGx4z5yx+giIunEFA0Z7oUO4DuWrOJV9xqR2tJVEdyA==
 
+"@hapi/hoek@^6.2.3":
+  version "6.2.4"
+  resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-6.2.4.tgz#4b95fbaccbfba90185690890bdf1a2fbbda10595"
+  integrity sha512-HOJ20Kc93DkDVvjwHyHawPwPkX44sIrbXazAUDiUXaY2R9JwQGo2PhFfnQtdrsIe4igjG2fPgMra7NYw7qhy0A==
+
 "@hapi/iron@5.x.x":
   version "5.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/iron/-/iron-5.1.4.tgz#7406f36847f798f52b92d1d97f855e27973832b7"
@@ -313,7 +318,7 @@
     "@hapi/cryptiles" "4.x.x"
     "@hapi/hoek" "8.x.x"
 
-"@hapi/joi@15.x.x":
+"@hapi/joi@15.x.x", "@hapi/joi@^15.0.3":
   version "15.1.1"
   resolved "https://registry.yarnpkg.com/@hapi/joi/-/joi-15.1.1.tgz#c675b8a71296f02833f8d6d243b34c57b8ce19d7"
   integrity sha512-entf8ZMOK8sc+8YfeOlM8pCfg3b5+WZIKBfUaaJT8UsjAAPjartzxIYm3TIbjvA4u+u++KbcXD38k682nVHDAQ==
@@ -2622,6 +2627,15 @@ graphql@*, graphql@^14.5.3, graphql@^14.5.8:
   integrity sha512-MMwmi0zlVLQKLdGiMfWkgQD7dY/TUKt4L+zgJ/aR0Howebod3aNgP5JkgvAULiR2HPVZaP2VEElqtdidHweLkg==
   dependencies:
     iterall "^1.2.2"
+
+hapi-auth-bearer-token@^6.2.1:
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/hapi-auth-bearer-token/-/hapi-auth-bearer-token-6.2.1.tgz#9f7fde713e02d959aae374e031d28f099ef5d80c"
+  integrity sha512-8HeeT3vvbE2TUBxoX+XdwTwjvdBKEJz+UOdcJ8xf182p2gBCrjdUXZboFbf0Ef3QrPtMQ4lTYRO5F8sL6jnWWQ==
+  dependencies:
+    "@hapi/boom" "^7.4.2"
+    "@hapi/hoek" "^6.2.3"
+    "@hapi/joi" "^15.0.3"
 
 has-flag@^3.0.0:
   version "3.0.0"

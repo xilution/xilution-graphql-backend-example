@@ -1,3 +1,5 @@
+import {ServiceError} from "./service-error";
+
 export const getEnvironment = (): string => {
     const environment: string | undefined = process.env.XILUTION_ENVIRONMENT;
 
@@ -5,5 +7,5 @@ export const getEnvironment = (): string => {
         return environment;
     }
 
-    throw new Error("Unable to find XILUTION_ENVIRONMENT environment variable.");
+    throw new ServiceError("Unable to find XILUTION_ENVIRONMENT environment variable.");
 };

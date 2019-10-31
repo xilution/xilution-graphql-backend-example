@@ -46,7 +46,7 @@
         "xln:rhino:delete-user": "./scripts/rhino/xln-delete-user.sh",
         "xln:rhino:show-activation": "./scripts/rhino/xln-show-activation.sh",
         "xln:rhino:show-users": "./scripts/rhino/xln-show-users.sh",
-        "xln:rhino:sign-up-user": "./scripts/rhino/xln-sign-up-user.sh",
+        "xln:rhino:sign-up-api-user": "./scripts/rhino/xln-sign-up-api-user.sh",
         "xln:rhino:verify-user-email": "./scripts/rhino/xln-verify-user-email.sh",
         "xln:zebra:activate": "./scripts/zebra/xln-activate.sh",
         "xln:zebra:deactivate": "./scripts/zebra/xln-deactivate.sh",

@@ -21,6 +21,6 @@ COPY --from=build /build/dist/server.js /app/server.js
 
 WORKDIR /app
 
-EXPOSE 3000
+EXPOSE 3123
 
 ENTRYPOINT ["node", "server.js"]

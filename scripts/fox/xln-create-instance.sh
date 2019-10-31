@@ -57,7 +57,7 @@ post_response=$(curl -sSL -D - \
     \"@type\": \"instance\",
     \"name\": \"xilution-graphql-backend-example\",
     \"organizationId\": \"${sub_organization_id}\",
-    \"containerPort\": \"3000\",
+    \"containerPort\": \"3123\",
     \"environment\": [
       {
         \"name\": \"XILUTION_API_CLIENT_ID\",

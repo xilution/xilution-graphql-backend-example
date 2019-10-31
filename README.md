@@ -145,11 +145,9 @@ TODO - add features
     * To see the Rhino activation status, run `yarn xln:rhino:show-activation` to see the Rhino activation status.
     * To deactivate Rhino, run `yarn xln:rhino:deactivate`.
 
-1. Add a User to the Sub-Organization
+1. Add an API User to the Sub-Organization
 
-    1. Run `yarn xln:rhino:sign-up-user {firstName} {lastName} {email} {username}`.
-        * {firstName} is the new user's first name.
-        * {lastName} is the new user's last name.
+    1. Run `yarn xln:rhino:sign-up-api-user {email} {username}`.
         * {email} is the new user's email address. Enter an email address that you have access to.
         * {username} is the new user's username.
         * A verification code will be emailed to the email address you entered when signing up the new user.
@@ -221,8 +219,8 @@ TODO - add features
 1. Run `yarn start`.
 
     1. You can make changes to the source code and nodemon will automatically restart the server when the changes are saved.
-    1. Open `http://localhost:3000/health` in a browser to verify that the server is running.
-    1. Open `http://localhost:3000/graphql` in a browser to see the Apollo Playground.
+    1. Open `http://localhost:3123/health` in a browser to verify that the server is running.
+    1. Open `http://localhost:3123/graphql` in a browser to see the Apollo Playground.
         * Requires Authentication. See Example GraphQL Queries and Mutations / Authentication below.
     1. `Ctrl-c` to stop.
 

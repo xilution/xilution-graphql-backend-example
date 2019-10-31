@@ -13,7 +13,7 @@ import resolvers from "./graphql/resolvers";
 import typeDefs from "./graphql/type-defs";
 import {authenticateAccessToken} from "./services/xilution-authentication-service";
 
-const PORT = 3000;
+const PORT = 3123;
 const HOST = "0.0.0.0";
 
 const init = async () => {

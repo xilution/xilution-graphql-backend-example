@@ -43,8 +43,10 @@ post_response=$(curl -sSL -D - \
   -H "Authorization: Bearer ${access_token}" \
   -d "{
     \"@type\": \"client\",
-    \"name\": \"API Client\",
-    \"grants\": [\"client_credentials\"],
+    \"name\": \"graphql-backend-example-api-client\",
+    \"grants\": [
+      \"client_credentials\"
+    ],
     \"redirectUris\": [],
     \"organizationId\": \"${sub_organization_id}\",
     \"clientUserId\": \"${api_user_id}\",

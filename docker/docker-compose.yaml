@@ -9,7 +9,7 @@ services:
         networks:
             - xilution-graphql-backend-example
         ports:
-            - '80:80'
+            - '3123:80'
         volumes:
             - ./nginx.conf:/etc/nginx/nginx.conf
     xilution-graphql-backend-example:
@@ -21,7 +21,7 @@ services:
             - XILUTION_API_CLIENT_SECRET
         image: xilution-graphql-backend-example
         ports:
-            - '3000'
+            - '3123'
         networks:
             - xilution-graphql-backend-example
 

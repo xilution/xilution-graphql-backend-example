@@ -37,7 +37,7 @@ post_response=$(curl -sSL -D - \
   -H "Authorization: Bearer ${access_token}" \
   -d "{
     \"@type\": \"organization\",
-    \"name\": \"xilution-graphql-backend-example\",
+    \"name\": \"graphql-backend-example-sub-organization\",
     \"organizationId\": \"${organization_id}\",
     \"owningUserId\": \"${user_id}\",
     \"active\": true

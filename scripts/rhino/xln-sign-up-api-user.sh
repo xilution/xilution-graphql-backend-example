@@ -22,21 +22,11 @@ if [[ -z "${XILUTION_SUB_ORGANIZATION_ID}" ]]; then
 fi
 
 if [[ -z "${1}" ]]; then
-  echo "firstName is required"
-  exit 1
-fi
-
-if [[ -z "${2}" ]]; then
-  echo "lastName is required"
-  exit 1
-fi
-
-if [[ -z "${3}" ]]; then
   echo "email is required"
   exit 1
 fi
 
-if [[ -z "${4}" ]]; then
+if [[ -z "${2}" ]]; then
   echo "username is required"
   exit 1
 fi
@@ -44,10 +34,8 @@ fi
 environment=${XILUTION_ENVIRONMENT}
 access_token=${XILUTION_ACCOUNT_ACCESS_TOKEN}
 sub_organization_id=${XILUTION_SUB_ORGANIZATION_ID}
-firstName=${1}
-lastName=${2}
-email=${3}
-username=${4}
+email=${1}
+username=${2}
 echo -n Password:
 read -rs password
 echo
@@ -56,8 +44,8 @@ post_response=$(curl -sSL -D - \
   -X POST \
   -H "Content-Type: application/json" \
   -d "{
-    \"firstName\": \"${firstName}\",
-    \"lastName\": \"${lastName}\",
+    \"firstName\": \"API\",
+    \"lastName\": \"User\",
     \"email\": \"${email}\",
     \"username\": \"${username}\",
     \"password\": \"${password}\"

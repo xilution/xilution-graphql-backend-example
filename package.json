@@ -52,8 +52,7 @@
         "xln:zebra:activate": "./scripts/zebra/xln-activate.sh",
         "xln:zebra:deactivate": "./scripts/zebra/xln-deactivate.sh",
         "xln:zebra:show-activation": "./scripts/zebra/xln-show-activation.sh",
-        "xln:zebra:token-from-api-client-credentials": "./scripts/zebra/xln-token-from-api-client-credentials.sh",
-        "xln:zebra:token-from-user-credentials": "./scripts/zebra/xln-token-from-user-credentials.sh"
+        "xln:zebra:token-from-api-client-credentials": "./scripts/zebra/xln-token-from-api-client-credentials.sh"
     },
     "repository": {
         "type": "git",

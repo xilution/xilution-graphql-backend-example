@@ -217,43 +217,32 @@ TODO - add features
 
     * Requires the Set Up step to be complete.
 
-1. Run `yarn xln:zebra:token-from-user-credentials` to acquire an access token with your sub-account user credentials.
-
-    * You'll use these credentials when you access the API.
-
 1. Run `yarn start`.
 
     1. You can make changes to the source code and nodemon will automatically restart the server when the changes are saved.
     1. Open `http://localhost:3000/health` in a browser to verify that the server is running.
     1. Open `http://localhost:3000/graphql` in a browser to see the Apollo Playground.
+        * Requires Authentication. See Example GraphQL Queries and Mutations / Authentication below.
     1. `Ctrl-c` to stop.
 
-## Docker
+## Example GraphQL Queries and Mutations
 
-### To build the Docker image
-This tags your docker image as `xilution-graphql-backend-example`.
+You can use variants of the following queries to test your API in the Apollo Playground.
 
-1. Run `yarn docker:build`.
+### Authentication
 
-### To run the Docker image locally
-Uses `docker-compose` to start an NGINX reverse proxy and your docker image.
+For each of the following queries and mutations, you'll need to include the following header.
 
-1. Run `yarn docker:start`.
+```json
+{
+  "Authorization": "Bearer {xilution-api-access-token}"
+}
+```
 
-    1. Open `http://localhost/health` to verify that the server is running.
-    1. Because the Docker image was build in production mode, the Apollo Playground is not available.
-    1. The GraphQL endpoint can by accessed at `http://localhost/graphql`.
+1. Run `yarn xln:zebra:token-from-api-client-credentials` to regenerate an API access token.
 
-### To stop the Docker image
-
-1. Run `yarn docker:stop`.
-
-### To publish the Docker image to Docker Hub
-You'll need a [Docker Hub](https://hub.docker.com/) account to execute the following.
-
-1. Run `yarn docker:publish` to push the image to your Docker Hub account.
-
-## Example GraphQL Queries
+1. Run `cat .env | grep XILUTION_API_ACCESS_TOKEN` to see the access token you just generated. You'll need this when you make requests to the API's `graphql` endpoint.
+    * Replace `{xilution-api-access-token}` in the JSON snippet above.
 
 ### List Pets
 
@@ -366,6 +355,31 @@ Variables
 	}
 }
 ```
+
+## Docker
+
+### To build the Docker image
+This tags your docker image as `xilution-graphql-backend-example`.
+
+1. Run `yarn docker:build`.
+
+### To run the Docker image locally
+Uses `docker-compose` to start an NGINX reverse proxy and your docker image.
+
+1. Run `yarn docker:start`.
+
+    1. Open `http://localhost/health` to verify that the server is running.
+    1. Because the Docker image was build in production mode, the Apollo Playground is not available.
+    1. The GraphQL endpoint can by accessed at `http://localhost/graphql`.
+
+### To stop the Docker image
+
+1. Run `yarn docker:stop`.
+
+### To publish the Docker image to Docker Hub
+You'll need a [Docker Hub](https://hub.docker.com/) account to execute the following.
+
+1. Run `yarn docker:publish` to push the image to your Docker Hub account.
 
 ## Xilution Fox
 Xilution [Fox](https://products.xilution.com/integration/fox) is a managed API hosting solution that uses Docker to instantiate API server instances.

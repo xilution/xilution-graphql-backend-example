@@ -2,6 +2,8 @@
 
 set -e
 
+. ./scripts/common-functions.sh
+
 source .env
 
 if [[ -z "${XILUTION_ENVIRONMENT}" ]]; then
@@ -24,13 +26,28 @@ if [[ -z "${XILUTION_ACCOUNT_USER_ID}" ]]; then
   exit 1
 fi
 
+if [[ -z "${XILUTION_API_CLIENT_ID}" ]]; then
+  echo "XILUTION_API_CLIENT_ID not found in .env"
+  exit 1
+fi
+
+if [[ -z "${XILUTION_API_CLIENT_SECRET}" ]]; then
+  echo "XILUTION_API_CLIENT_SECRET not found in .env"
+  exit 1
+fi
+
+if [[ -z "${1}" ]]; then
+  echo "docker_hub_account is required"
+  exit 1
+fi
+
 environment=${XILUTION_ENVIRONMENT}
 access_token=${XILUTION_ACCOUNT_ACCESS_TOKEN}
 sub_organization_id=${XILUTION_SUB_ORGANIZATION_ID}
 user_id=${XILUTION_ACCOUNT_USER_ID}
-client_id=${5}
-client_secret=${6}
-docker_hub_account=${7}
+client_id=${XILUTION_API_CLIENT_ID}
+client_secret=${XILUTION_API_CLIENT_SECRET}
+docker_hub_account=${1}
 
 post_response=$(curl -sSL -D - \
   -X POST \

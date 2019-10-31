@@ -1,7 +1,7 @@
 {
     "name": "@xilution/xilution-graphql-backend-example",
     "version": "1.0.0",
-    "description": "An example showing how to build a graphql server using Xilution's Beagily and Fox.",
+    "description": "An example demonstrating how to build a graphql server using Xilution's IAM suite (Elephant, Rhino, Hippo and Zebra), Beagily and Fox.",
     "scripts": {
         "build": "./scripts/build.sh",
         "clean": "./scripts/clean.sh",

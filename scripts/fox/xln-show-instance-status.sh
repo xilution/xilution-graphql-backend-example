@@ -2,15 +2,32 @@
 
 set -e
 
-if [ $# -lt 4 ]; then
-  echo "Usage: yarn xln:fox:show-instance-status {environment} {access_token} {sub_organization_id} {instance_id}"
+source .env
+
+if [[ -z "${XILUTION_ENVIRONMENT}" ]]; then
+  echo "XILUTION_ENVIRONMENT not found in .env"
   exit 1
 fi
 
-environment=${1}
-access_token=${2}
-sub_organization_id=${3}
-instance_id=${4}
+if [[ -z "${XILUTION_ACCOUNT_ACCESS_TOKEN}" ]]; then
+  echo "XILUTION_ACCOUNT_ACCESS_TOKEN not found in .env"
+  exit 1
+fi
+
+if [[ -z "${XILUTION_SUB_ORGANIZATION_ID}" ]]; then
+  echo "XILUTION_SUB_ORGANIZATION_ID not found in .env"
+  exit 1
+fi
+
+if [[ -z "${XILUTION_INSTANCE_ID}" ]]; then
+  echo "XILUTION_INSTANCE_ID not found in .env"
+  exit 1
+fi
+
+environment=${XILUTION_ENVIRONMENT}
+access_token=${XILUTION_ACCOUNT_ACCESS_TOKEN}
+sub_organization_id=${XILUTION_SUB_ORGANIZATION_ID}
+instance_id=${XILUTION_INSTANCE_ID}
 
 curl -s \
   -X GET \

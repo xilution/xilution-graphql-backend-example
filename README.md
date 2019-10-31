@@ -1,6 +1,6 @@
 <h1 align="center" style="border-bottom: none;">xilution-graphql-backend-example</h1>
 <p>
-An example demonstrating how to build a GraphQL backend server using Xilution's Beagily and Fox.
+An example demonstrating how to build a GraphQL backend server using Xilution's IAM Suite (Elephant, Rhino, Hippo and Zebra), Beagily and Fox.
 <p>
 <p align="center">
   <a href="https://github.com/xilution/xilution-graphql-backend-example/issues">
@@ -31,7 +31,6 @@ An example demonstrating how to build a GraphQL backend server using Xilution's 
 
 TODO - Describe the use case
 
-TODO - explain yarn input variables with a simple diagram
 
 ```text
              +------------------+
@@ -108,11 +107,14 @@ TODO - add features
 
 ## Set Up
 
-1. Get an Access Token with your Xilution Account Credentials
+1. Create an environment variables file.
 
     1. Run `touch .env` to create a new environment variables file.
     1. Run `echo "XILUTION_ENVIRONMENT={environment}" >> .env` to add your environment preference to the environment an variables file (.env).
         * {environment} is a Xilution environment. One of 'test' or 'prod'.
+
+1. Get an Access Token with your Xilution Account Credentials
+
     1. Run `yarn xln:authentication:token-from-user-credentials`.
         * Note: You will be prompted for your Xilution account username and password.
         * Note: The access token saved to the environment variables file will expire in one hour.
@@ -392,8 +394,8 @@ Fox must be activated on your Xilution Account before it's available for use.
 
 1. Run `yarn xln:fox:activate`.
 
-* To see the Hippo activation status, run `yarn xln:fox:show-activation` to see the Hippo activation status.
-* To deactivate Hippo, run `yarn xln:fox:deactivate`.
+* To see the Fox activation status, run `yarn xln:fox:show-activation` to see the Fox activation status.
+* To deactivate Fox, run `yarn xln:fox:deactivate`.
 
 ### Create a Fox Instance
 
@@ -405,7 +407,7 @@ Likewise, you deprovision a Fox Instance to stop your API.
 
 * To see your instances, run `yarn xln:fox:show-instances`.
 * To delete a instance, run `yarn xln:fox:delete-instance {xilution_instance_id}`
-    * {xilution_instance_id} is a Fox instance id.
+    * {xilution_instance_id} is a Fox instance ID.
 
 ### Provision the Fox Instance
 
@@ -433,14 +435,14 @@ You can make changes to your API, build and redeploy using the following command
 
 1. Run `yarn docker:build`.
 1. Run `yarn docker:publish` to push the image to your Docker Hub account.
-1. Run `yarn xln:restart-fox-instance`, to restart the instance in the Fox managed API hosting service.
+1. Run `yarn xln:fox:restart-instance`, to restart the instance in the Fox managed API hosting service.
 
 We recommend adding a version endpoint to your API and use it to determine when a new version of your API has been deployed.
 
 ### Deprovision the Fox Instance
 
-1. Run `yarn xln:deprovision-fox-instance`, to deprovision the Fox instance.
-1. Run `yarn xln:show-fox-instance-status`, to see the status of your Fox instance.
+1. Run `yarn xln:fox:deprovision-instance`, to deprovision the Fox instance.
+1. Run `yarn xln:fox:show-instance-status`, to see the status of your Fox instance.
 It can take up to 5 minutes to fully deprovision your Fox instance.
 Deprovisioning is complete when you see the following.
     ```json
@@ -451,8 +453,8 @@ Deprovisioning is complete when you see the following.
 
 ### Delete the Fox Instance
 
-1. Run `yarn xln:delete-fox-instance {xilution_instance_id}`, to delete the Fox instance.
-    * {xilution_instance_id} is a Fox instance id.
+1. Run `yarn xln:fox:delete-instance {xilution_instance_id}`, to delete the Fox instance.
+    * {xilution_instance_id} is a Fox instance ID.
 
 ---
 Copyright 2019 Teapot, LLC.  

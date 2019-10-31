@@ -418,15 +418,18 @@ Provisioning is complete when you see the following.
        "status": "CREATE_COMPLETE"
     }
    ```
+Now you can access the GraphQL Example running on Fox.
 
 ### Access The GraphQL Example Running on Fox
 
+1. Run `cat .env | grep XILUTION_INSTANCE_ID` to see your Fox Instance ID.
 1. Open `https://{your-fox-instance-id}.prod.fox.integration.xilution/health` in a browser to verify that the server is running.
+    * Replace {your-fox-instance-id} with the Fox Instance ID shown in the previous step.
 1. Because the Docker image was build in production mode, the Apollo Playground is not available.
 1. The GraphQL endpoint can by accessed at `https://{your-fox-instance-id}.prod.fox.integration.xilution/graphql`.
 
 ### Restart the Fox Instance
-You can make changes to your API and redeploy using the following commands.
+You can make changes to your API, build and redeploy using the following commands.
 
 1. Run `yarn docker:build`.
 1. Run `yarn docker:publish` to push the image to your Docker Hub account.
@@ -448,7 +451,8 @@ Deprovisioning is complete when you see the following.
 
 ### Delete the Fox Instance
 
-1. Run `yarn xln:delete-fox-instance`, to delete the Fox instance.
+1. Run `yarn xln:delete-fox-instance {xilution_instance_id}`, to delete the Fox instance.
+    * {xilution_instance_id} is a Fox instance id.
 
 ---
 Copyright 2019 Teapot, LLC.  

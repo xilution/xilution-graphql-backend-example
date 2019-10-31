@@ -155,7 +155,7 @@ TODO - add features
         * A verification code will be emailed to the email address you entered when signing up the new user.
     
     * To see the sub-organization's users run, `yarn xln:rhino:show-users`.
-    * To delete a sub-organization's user run, `yarn xln:rhino:delete-user {user_id}`.
+    * To delete a sub-organization's user run, `yarn xln:rhino:delete-user {user-id}`.
     
     * TODO - make a note about needing a credit card in Prod.
 
@@ -177,10 +177,9 @@ TODO - add features
 1. Add a Clients to the Sub-Organization
 
     1. Run `yarn xln:hippo:create-api-client`.
-    1. Run `yarn xln:hippo:create-ui-client`.
 
     * To see the sub-organization's clients run, `yarn xln:hippo:show-clients`.
-    * To delete a sub-organization's client run, `yarn xln:hippo:delete-client {client_id}`.
+    * To delete a sub-organization's client run, `yarn xln:hippo:delete-client {client-id}`.
 
 1. Get an Access Token with your API Client Credentials
 
@@ -406,8 +405,7 @@ Likewise, you deprovision a Fox Instance to stop your API.
 1. Run `yarn xln:fox:create-instance`.
 
 * To see your instances, run `yarn xln:fox:show-instances`.
-* To delete a instance, run `yarn xln:fox:delete-instance {xilution_instance_id}`
-    * {xilution_instance_id} is a Fox instance ID.
+* To delete a instance, run `yarn xln:fox:delete-instance {instance-id}`.
 
 ### Provision the Fox Instance
 
@@ -425,8 +423,7 @@ Now you can access the GraphQL Example running on Fox.
 ### Access The GraphQL Example Running on Fox
 
 1. Run `cat .env | grep XILUTION_INSTANCE_ID` to see your Fox Instance ID.
-1. Open `https://{your-fox-instance-id}.prod.fox.integration.xilution/health` in a browser to verify that the server is running.
-    * Replace {your-fox-instance-id} with the Fox Instance ID shown in the previous step.
+1. Open `https://{instance-id}.prod.fox.integration.xilution/health` in a browser to verify that the server is running.
 1. Because the Docker image was build in production mode, the Apollo Playground is not available.
 1. The GraphQL endpoint can by accessed at `https://{your-fox-instance-id}.prod.fox.integration.xilution/graphql`.
 
@@ -453,8 +450,7 @@ Deprovisioning is complete when you see the following.
 
 ### Delete the Fox Instance
 
-1. Run `yarn xln:fox:delete-instance {xilution_instance_id}`, to delete the Fox instance.
-    * {xilution_instance_id} is a Fox instance ID.
+1. Run `yarn xln:fox:delete-instance {instance-id}`, to delete the Fox instance.
 
 ---
 Copyright 2019 Teapot, LLC.  

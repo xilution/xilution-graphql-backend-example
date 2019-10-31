@@ -37,7 +37,6 @@
         "xln:fox:show-instances": "./scripts/fox/xln-show-instances.sh",
         "xln:hippo:activate": "./scripts/hippo/xln-activate.sh",
         "xln:hippo:create-api-client": "./scripts/hippo/xln-create-api-client.sh",
-        "xln:hippo:create-ui-client": "./scripts/hippo/xln-create-ui-client.sh",
         "xln:hippo:deactivate": "./scripts/hippo/xln-deactivate.sh",
         "xln:hippo:delete-client": "./scripts/hippo/xln-delete-client.sh",
         "xln:hippo:show-activation": "./scripts/hippo/xln-show-activation.sh",

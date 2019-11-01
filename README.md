@@ -29,64 +29,99 @@ An example demonstrating how to build a GraphQL backend server using Xilution's 
 
 ## Use Case
 
-TODO - Describe the use case
+**As:** a frontend app builder who creates apps for multiple clients.
+
+**I want:** a [GraphQL](https://graphql.org/) enabled API that restricts access to unknown users.
+
+**So that:** I can build a pet data management app for one of my clients.
+
+## Xilution Product Hierarchy
 
 ```text
-             +------------------+
-             | Xilution Account |
-             +--------+---------+
-                      |
-                      v
-               +------+-------+
-               | Organization |
-               +------+-------+
-                      |
-                      v
-           +----------+----------+
-           |    [ Elephant ]     |
-           | Sub Organization(s) |
-           +----------+----------+
-                      |
-                      v
-      +--------------------------------+
-      |               |                |
-      v               v                v
-+-----+-----+   +-----+-----+   +------+------+
-| [ Hippo ] |   | [ Rhino ] |   |   [ Fox ]   |
-| Client(s) |   |  User(s)  |   | Instance(s) |
-+-----------+   +-----------+   +-------------+
+                 +------------------+
+                 | Xilution Account |
+                 +--------+---------+
+                          |
+                          v
+                   +------+-------+
+                   | Organization +--------------+
+                   +------+-------+              |
+                          |                      |
+                          v                      |
+               +----------+----------+           |
+               |    [ Elephant ]     |           |
+               | Sub-Organization(s) |           |
+               +----------+----------+           |
+                          |                      |
+                          v                      |
+          +--------------------------------+     |
+          |               |                |     |
+          v               v                v     v
+    +-----+-----+   +-----+-----+      +---+-----+---+
+    | [ Hippo ] |   | [ Rhino ] |      |   [ Fox ]   |
+    | Client(s) |   |  User(s)  |      | Instance(s) |
+    +-----------+   +-----------+      +-------------+
 ```
 
-TODO - explain this graph
+* [Elephant](https://products.xilution.com/basics/elephant)
+* [Hippo](https://products.xilution.com/basics/hippo)
+* [Rhino](https://products.xilution.com/basics/rhino)
+* [Fox](https://products.xilution.com/integration/fox)
 
-* Xilution [Elephant](https://products.xilution.com/basics/elephant) is part of Xilution's IAM suite and is used to manage sub-organizations.
-* Xilution [Hippo](https://products.xilution.com/basics/hippo) is part of Xilution's IAM suite and is used to manage sub-organization clients.
-* Xilution [Rhino](https://products.xilution.com/basics/rhino) is part of Xilution's IAM suite and is used to manage sub-organization users.
-* Xilution [Fox](https://products.xilution.com/integration/fox) is a managed API hosting solution that uses Docker to instantiate API server instances.
+When you create a Xilution account, an Organization record is created for you.
+This is referred to as your "Account Organization" in the instructions below.
+As a frontend app builder who supports multiple clients, you can create multiple Sub-Organizations via Xilution Elephant.
+One for each client you support.
+This allows you to separate client resource management and billing from your Account Organization and other Sub-Organizations.
+
+Xilution Hippo is part of Xilution's IAM suite and manages Sub-Organization clients.
+A client is a reference to a web or mobile application.
+In this example, you'll create one Sub-Organization client.
+
+Xilution Rhino is part of Xilution's IAM suite and manages Sub-Organization users.
+In this example, you'll create one Sub-Organization user.
+
+Xilution Fox is a managed API hosting solution that uses [Docker](https://www.docker.com/) to instantiate API server instances.
+You can associate Fox instances with your Account Organization and/or Sub-Organizations.
+In this example, you'll associated a Fox instance with a Sub-Organization.
+
+## Implemented Solution
 
 ```text
-                                        +-----------+
-                                  +---->+ [ Zebra ] |
-                                  |     |   Auth    |
-                                  |     +-----------+
-+-----------+     +---------+     |
-|   User    +---->+ [ Fox ] +---->+
-| Interface |     |   API   |     |
-+-----------+     +---------+     |
-                                  |    +--------------+
-                                  +--->+ [ Beagily ]  |
-                                       | Data Storage |
-                                       +--------------+
+                                  +-----------+
+                            +---->+ [ Zebra ] |
+                            |     |   Auth    |
+                            |     +-----------+
+            +---------+     |
+       o----+ [ Fox ] +---->+
+    GraphQL |   API   |     |
+            +---------+     |
+                            |    +--------------+
+                            +--->+ [ Beagily ]  |
+                                 | Data Storage |
+                                 +--------------+
 ```
 
-TODO - explain this graph
+* [Zebra](https://products.xilution.com/basics/zebra)
+* [Beagily](https://products.xilution.com/basics/beagily) 
 
-* Xilution [Zebra](https://products.xilution.com/basics/zebra) is part of Xilution's IAM suite and is used to authenticate and authorize Rhino users and Hippo clients.
-* Xilution [Beagily](https://products.xilution.com/basics/beagily) is a simple JSON data storage API that features integrated search and access control features.
+When you complete this example, you will create a GraphQL enabled API that supports the use case mentioned above.
+The API authorizes calls to it's `/graphql` endpoint by making `/oauth/authenticate` calls to Xilution Zebra with the Bearer token passed in the Authorization header of each request.
+Xilution Zebra is [OAuth 2.0](https://oauth.net/2/) compliant and is part of Xilution's IAM (identity and access management) suite and is used to authenticate and authorize Rhino users and Hippo clients.
+
+The API interfaces with Xilution Beagily to store and retrieve Pet data.
+The API makes calls to Beagily with a Bearer token passed in the Authorization header.
+The token is acquired from Zebra using client credentials.
+The client Beagily uses to authenticate to Beagily is referred to as API Client in the instructions below.
+Access to Beagily is controlled through Beagily's data access control features.
+Xilution Beagily is a simple JSON data storage API that features integrated search and access control features.
 
 ## Features
 
-TODO - add features
+* Xilution's IAM Suite ([Elephant](https://products.xilution.com/basics/elephant), [Hippo](https://products.xilution.com/basics/hippo), [Rhino](https://products.xilution.com/basics/rhino) and [Zebra](https://products.xilution.com/basics/zebra)) for identity and access management.
+* Xilution [Fox](https://products.xilution.com/integration/fox) for API hosting.
+* Xilution [Beagily](https://products.xilution.com/basics/beagily) for data storage.
+* [GraphQL](https://graphql.org/) enabled API running on [Hapi](https://github.com/hapijs/hapi) and the [Apollo Server](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-hapi).
 
 ## Prerequisites
 
@@ -99,7 +134,9 @@ TODO - add features
     1. Open [https://prod.register.xilution.com](https://prod.register.xilution.com) to create a Xilution Prod account.
     1. Open [https://test.register.xilution.com](https://test.register.xilution.com) to create a Xilution Test account.
     
-    * Note: Xilution Test and Prod accounts are not synchronized.
+    * A valid credit card must be associated with your account to use of Xilution Products in Prod.
+      You can use the Xilution Admin Portal to add a Credit Card to your account.
+    * Xilution Test and Prod accounts are not synchronized.
 
 ## General
 
@@ -143,9 +180,9 @@ Note: Requires Account Organization Authentication
 
 1. Run `yarn xln:elephant:create-sub-organization`.
 
-* To see your sub-organizations, run `yarn xln:elephant:show-organizations`.
-* To delete a sub-organization, run `yarn xln:elephant:delete-organization {sub-organization-id}`
-    * {sub-organization-id} is a sub-organization id.
+* To see your Sub-Organizations, run `yarn xln:elephant:show-organizations`.
+* To delete a Sub-Organization, run `yarn xln:elephant:delete-organization {sub-organization-id}`
+    * {sub-organization-id} is a Sub-Organization id.
 
 ### Sub-Organization Product Activation
 
@@ -155,9 +192,9 @@ Note: Requires Account Organization Authentication
 1. Run `yarn xln:beagily:activate-for-sub-organization`.
 1. Run `yarn xln:fox:activate-for-sub-organization`.
 
-* Run `yarn xln:{product-name}:show-activation-for-sub-organization` to see the status of a sub-organization's product activation.
+* Run `yarn xln:{product-name}:show-activation-for-sub-organization` to see the status of a Sub-Organization's product activation.
     * {product-name} is one of `zebra`, `beagily` or `fox`.
-* Run `yarn xln:{product-name}:deactivate-for-sub-organization` to deactivate a product for a sub-organization.
+* Run `yarn xln:{product-name}:deactivate-for-sub-organization` to deactivate a product for a Sub-Organization.
 
 ### Add an API User to the Sub-Organization
 
@@ -171,10 +208,8 @@ Note: Requires Account Organization Authentication
     * {username} is the new user's username.
     * {code} is the verification code the you received in your email inbox.
 
-* To see the sub-organization's users run, `yarn xln:rhino:show-users`.
-* To delete a sub-organization's user run, `yarn xln:rhino:delete-user {user-id}`.
-
-TODO - make a note about needing a credit card in Prod.
+* To see the Sub-Organization's users run, `yarn xln:rhino:show-users`.
+* To delete a Sub-Organization's user run, `yarn xln:rhino:delete-user {user-id}`.
 
 ### Add a Client to the Sub-Organization
 
@@ -182,8 +217,8 @@ Note: Requires Account Organization Authentication
 
 1. Run `yarn xln:hippo:create-api-client`.
 
-* To see the sub-organization's clients run, `yarn xln:hippo:show-clients`.
-* To delete a sub-organization's client run, `yarn xln:hippo:delete-client {client-id}`.
+* To see the Sub-Organization's clients run, `yarn xln:hippo:show-clients`.
+* To delete a Sub-Organization's client run, `yarn xln:hippo:delete-client {client-id}`.
 
 ### Sub-Organization Authentication
 
@@ -194,7 +229,7 @@ Note: Requires Account Organization Authentication
 Note: Requires Sub-Organization Authentication
 
 1. Run `yarn xln:beagily:create-pet-type`.
-1. Run `yarn xln:beagily:create-pet {name}` passing some different pet names to prime with Beagily data store with some data. 
+1. Run `yarn xln:beagily:create-pet {name}` a few times, passing some different pet names. 
    * {name} is a pet's name.
 
 ## Running Locally

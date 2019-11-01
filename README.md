@@ -250,8 +250,8 @@ Note: Requires Sub-Organization Authentication
     * Requires the Set Up step to be complete.
 1. Run `yarn start`.
     * You can make changes to the source code and nodemon will automatically restart the server when the changes are saved.
-    * Open `http://localhost:3123/health` in a browser to verify that the server is running.
-    * Open `http://localhost:3123/graphql` in a browser to see the Apollo Playground.
+    * Open http://localhost:3123/health in a browser to verify that the server is running.
+    * Open http://localhost:3123/graphql in a browser to see the Apollo Playground.
         * Requires Authentication. See Example GraphQL Queries and Mutations / Authentication below.
     * `Ctrl-c` to stop.
 

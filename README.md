@@ -81,7 +81,7 @@ TODO - explain this graph
 
 TODO - explain this graph
 
-* Xilution [Zebra](https://products.xilution.com/basics/zebrah) is part of Xilution's IAM suite and is used to authenticate and authorize Rhino users and Hippo clients.
+* Xilution [Zebra](https://products.xilution.com/basics/zebra) is part of Xilution's IAM suite and is used to authenticate and authorize Rhino users and Hippo clients.
 * Xilution [Beagily](https://products.xilution.com/basics/beagily) is a simple JSON data storage API that features integrated search and access control features.
 
 ## Features

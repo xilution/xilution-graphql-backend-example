@@ -150,6 +150,18 @@ Xilution Beagily is a simple JSON data storage API that features integrated sear
 
 ## Set Up
 
+The following instructions are enabled via a large suite of scripts found in the [scripts](./scripts) folder of this repo.
+You can see the changes made to your account via the scripts through our product portals.
+You'll authenticate to the portals with your Xilution account username and password.
+
+| Portal   | Prod                                                      | Test                                                      |
+|----------|-----------------------------------------------------------|-----------------------------------------------------------|
+| Account  | https://prod.portal.xilution.com/                         | https://test.portal.xilution.com/                         |
+| Elephant | https://prod.portal.elephant.basics.xilution.com/         | https://test.portal.elephant.basics.xilution.com/         |
+| Rhino    | https://prod.portal.rhino.basics.xilution.com/            | https://test.portal.rhino.basics.xilution.com/            |
+| Hippo    | https://prod.portal.hippo.basics.xilution.com/            | https://test.portal.hippo.basics.xilution.com/            |
+| Fox      | https://prod.portal.fox.integration.xilution.com/         | https://test.portal.fox.integration.xilution.com/         |
+
 ### Environment Variables
 
 1. Run `touch .env` to create a new environment variables file.

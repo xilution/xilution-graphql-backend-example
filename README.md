@@ -31,7 +31,6 @@ An example demonstrating how to build a GraphQL backend server using Xilution's 
 
 TODO - Describe the use case
 
-
 ```text
              +------------------+
              | Xilution Account |
@@ -49,33 +48,42 @@ TODO - Describe the use case
            +----------+----------+
                       |
                       v
-      +----------------------------------+
-      |               |                  |
-      v               v                  v
-+-----+-----+   +-----+-----+   +--------+--------+
-| [ Hippo ] |   | [ Rhino ] |   |     [ Fox ]     |
-| Client(s) |   |  User(s)  |   | API Instance(s) |
-+-----------+   +-----------+   +-----------------+
+      +--------------------------------+
+      |               |                |
+      v               v                v
++-----+-----+   +-----+-----+   +------+------+
+| [ Hippo ] |   | [ Rhino ] |   |   [ Fox ]   |
+| Client(s) |   |  User(s)  |   | Instance(s) |
++-----------+   +-----------+   +-------------+
 ```
 
 TODO - explain this graph
+
+* Xilution [Elephant](https://products.xilution.com/basics/elephant) is part of Xilution's IAM suite and is used to manage sub-organizations.
+* Xilution [Hippo](https://products.xilution.com/basics/hippo) is part of Xilution's IAM suite and is used to manage sub-organization clients.
+* Xilution [Rhino](https://products.xilution.com/basics/rhino) is part of Xilution's IAM suite and is used to manage sub-organization users.
+* Xilution [Fox](https://products.xilution.com/integration/fox) is a managed API hosting solution that uses Docker to instantiate API server instances.
+
 
 ```text
-                                             +-----------+
-                                       +---->+ [ Zebra ] |
-                                       |     |   Auth    |
-                                       |     +-----------+
-+-----------+     +--------------+     |
-|   User    +---->+   [ Fox ]    +---->+
-| Interface |     | API Instance |     |
-+-----------+     +--------------+     |
-                                       |    +--------------+
-                                       +--->+ [ Beagily ]  |
-                                            | Data Storage |
-                                            +--------------+
+                                        +-----------+
+                                  +---->+ [ Zebra ] |
+                                  |     |   Auth    |
+                                  |     +-----------+
++-----------+     +---------+     |
+|   User    +---->+ [ Fox ] +---->+
+| Interface |     |   API   |     |
++-----------+     +---------+     |
+                                  |    +--------------+
+                                  +--->+ [ Beagily ]  |
+                                       | Data Storage |
+                                       +--------------+
 ```
 
 TODO - explain this graph
+
+* Xilution [Zebra](https://products.xilution.com/basics/zebrah) is part of Xilution's IAM suite and is used to authenticate and authorize Rhino users and Hippo clients.
+* Xilution [Beagily](https://products.xilution.com/basics/beagily) is a simple JSON data storage API that features integrated search and access control features.
 
 ## Features
 
@@ -98,7 +106,6 @@ TODO - add features
 1. Install Yarn: https://yarnpkg.com
 1. Install jq: https://stedolan.github.io/jq/
 1. Install cURL: https://curl.haxx.se/
-
 1. Create a Xilution Account
     1. Open [https://prod.register.xilution.com](https://prod.register.xilution.com) to create a Xilution Prod account.
     1. Open [https://test.register.xilution.com](https://test.register.xilution.com) to create a Xilution Test account.
@@ -107,122 +114,100 @@ TODO - add features
 
 ## Set Up
 
-1. Create an environment variables file.
+### Environment Variables
 
-    1. Run `touch .env` to create a new environment variables file.
-    1. Run `echo "XILUTION_ENVIRONMENT={environment}" >> .env` to add your environment preference to the environment an variables file (.env).
-        * {environment} is a Xilution environment. One of 'test' or 'prod'.
+1. Run `touch .env` to create a new environment variables file.
+1. Run `echo "XILUTION_ENVIRONMENT={environment}" >> .env` to add your environment preference to the environment an variables file (.env).
+    * {environment} is a Xilution environment. One of 'test' or 'prod'.
 
-1. Get an Access Token with your Xilution Account Credentials
+### Account Organization Authentication
 
-    1. Run `yarn xln:authentication:token-from-user-credentials`.
-        * Note: You will be prompted for your Xilution account username and password.
-        * Note: The access token saved to the environment variables file will expire in one hour.
+1. Run `yarn xln:authentication:token-from-user-credentials`.
+    * You will be prompted for your Xilution account username and password.
+    * The access token saved to the environment variables file will expire in one hour.
 
-1. Activate Elephant
+### Account Organization Product Activation
 
-    Xilution [Elephant](https://products.xilution.com/basics/elephant) is part of Xilution's IAM suite and is used to manage sub-organizations.
+Note: Requires Account Organization Authentication
 
-    1. Run `yarn xln:elephant:activate`.
-    
-    * To see the Elephant activation status, run `yarn xln:elephant:show-activation` to see the Elephant activation status.
-    * To deactivate Elephant, run `yarn xln:elephant:deactivate`.
+1. Run `yarn xln:elephant:activate-for-account-organization`.
+1. Run `yarn xln:hippo:activate-for-account-organization`.
+1. Run `yarn xln:rhino:activate-for-account-organization`.
 
-1. Create a Xilution Sub-Organization
+* Run `yarn xln:{product-name}:show-activation-for-account-organization` to see the status of an account organization's product activation.
+    * {product-name} is one of `elephant`, `hippo` or `rhino`.
+* Run `yarn xln:{product-name}:deactivate-for-account-organization` to deactivate a product for an account organization.
 
-    1. Run `yarn xln:elephant:create-organization`.
-    
-    * To see your sub-organizations, run `yarn xln:elephant:show-organizations`.
-    * To delete a sub-organization, run `yarn xln:elephant:delete-organization {xilution_sub_organization_id}`
-        * {xilution_sub_organization_id} is a sub-organization id.
+### Create a Xilution Sub-Organization
 
-1. Activate Rhino
+Note: Requires Account Organization Authentication
 
-    Xilution [Rhino](https://products.xilution.com/basics/rhino) is part of Xilution's IAM suite and is used to manage sub-organization users.
+1. Run `yarn xln:elephant:create-organization`.
 
-    1. Run `yarn xln:rhino:activate`.
-    
-    * To see the Rhino activation status, run `yarn xln:rhino:show-activation` to see the Rhino activation status.
-    * To deactivate Rhino, run `yarn xln:rhino:deactivate`.
+* To see your sub-organizations, run `yarn xln:elephant:show-organizations`.
+* To delete a sub-organization, run `yarn xln:elephant:delete-organization {xilution_sub_organization_id}`
+    * {xilution_sub_organization_id} is a sub-organization id.
 
-1. Add an API User to the Sub-Organization
+### Sub-Organization Product Activation
 
-    1. Run `yarn xln:rhino:sign-up-api-user {email} {username}`.
-        * {email} is the new user's email address. Enter an email address that you have access to.
-        * {username} is the new user's username.
-        * A verification code will be emailed to the email address you entered when signing up the new user.
-    
-    * To see the sub-organization's users run, `yarn xln:rhino:show-users`.
-    * To delete a sub-organization's user run, `yarn xln:rhino:delete-user {user-id}`.
-    
-    * TODO - make a note about needing a credit card in Prod.
+Note: Requires Account Organization Authentication
 
-1. Verify the New User's Email Address
+1. Run `yarn xln:zebra:activate-for-sub-organization`.
+1. Run `yarn xln:beagily:activate-for-sub-organization`.
+1. Run `yarn xln:fox:activate-for-sub-organization`.
 
-    1. Run `yarn xln:rhino:verify-user-email {username} {code}`.
-        * {username} is the new user's username.
-        * {code} is the verification code the you received in your email inbox.
+* Run `yarn xln:{product-name}:show-activation-for-sub-organization` to see the status of a sub-organization's product activation.
+    * {product-name} is one of `zebra`, `beagily` or `fox`.
+* Run `yarn xln:{product-name}:deactivate-for-sub-organization` to deactivate a product for a sub-organization.
 
-1. Activate Hippo
+### Add an API User to the Sub-Organization
 
-    Xilution [Hippo](https://products.xilution.com/basics/hippo) is part of Xilution's IAM suite and is used to manage sub-organization clients.
+Note: Requires Account Organization Authentication
 
-    1. Run `yarn xln:hippo:activate`.
+1. Run `yarn xln:rhino:sign-up-api-user {email} {username}`.
+    * {email} is the new user's email address. Enter an email address that you have access to.
+    * {username} is the new user's username.
+    * A verification code will be emailed to the email address you entered when signing up the new user.
+1. Run `yarn xln:rhino:verify-user-email {username} {code}` to verify the new user's email.
+    * {username} is the new user's username.
+    * {code} is the verification code the you received in your email inbox.
 
-    * To see the Hippo activation status, run `yarn xln:hippo:show-activation` to see the Hippo activation status.
-    * To deactivate Hippo, run `yarn xln:hippo:deactivate`.
+* To see the sub-organization's users run, `yarn xln:rhino:show-users`.
+* To delete a sub-organization's user run, `yarn xln:rhino:delete-user {user-id}`.
 
-1. Add a Clients to the Sub-Organization
+TODO - make a note about needing a credit card in Prod.
 
-    1. Run `yarn xln:hippo:create-api-client`.
+### Add a Client to the Sub-Organization
 
-    * To see the sub-organization's clients run, `yarn xln:hippo:show-clients`.
-    * To delete a sub-organization's client run, `yarn xln:hippo:delete-client {client-id}`.
+Note: Requires Account Organization Authentication
 
-1. Get an Access Token with your API Client Credentials
+1. Run `yarn xln:hippo:create-api-client`.
 
-    1. Run `yarn xln:zebra:token-from-api-client-credentials`.
+* To see the sub-organization's clients run, `yarn xln:hippo:show-clients`.
+* To delete a sub-organization's client run, `yarn xln:hippo:delete-client {client-id}`.
 
-1. Activate Beagily
+### Sub-Organization Authentication
 
-    Xilution [Beagily](https://products.xilution.com/basics/beagily) is a simple JSON data storage API that features integrated search and access control features.
+1. Run `yarn xln:zebra:token-from-api-client-credentials`.
 
-    1. Run `yarn xln:beagily:activate`.
+### Prime Beagily with Some Data
 
-    * To see the Rhino activation status, run `yarn xln:beagily:show-activation` to see the Rhino activation status.
-    * To deactivate Rhino, run `yarn xln:beagily:deactivate`.
+Note: Requires Sub-Organization Authentication
 
-1. Create a Beagily Pet Type
-
-    1. Run `yarn xln:beagily:create-pet-type`.
-
-1. Create some pet records.
-
-    1. Run `yarn xln:beagily:create-pet {name}` passing some different pet names to prime with Beagily data store with some data. 
-        * {name} is a pet's name.
-
-1. Activate Zebra
-
-    Xilution [Zebra](https://products.xilution.com/basics/zebra) is part of Xilution's IAM suite and is used to authenticate and authorize clients and users.
-
-    1. Run `yarn xln:zebra:activate`.
-
-    * To see the Rhino activation status, run `yarn xln:zebra:show-activation` to see the Rhino activation status.
-    * To deactivate Rhino, run `yarn xln:zebra:deactivate`.
+1. Run `yarn xln:beagily:create-pet-type`.
+1. Run `yarn xln:beagily:create-pet {name}` passing some different pet names to prime with Beagily data store with some data. 
+   * {name} is a pet's name.
 
 ## Running Locally
 
 1. Run `export $(grep -v '^#' .env | xargs)`.
-
     * Requires the Set Up step to be complete.
-
 1. Run `yarn start`.
-
-    1. You can make changes to the source code and nodemon will automatically restart the server when the changes are saved.
-    1. Open `http://localhost:3123/health` in a browser to verify that the server is running.
-    1. Open `http://localhost:3123/graphql` in a browser to see the Apollo Playground.
+    * You can make changes to the source code and nodemon will automatically restart the server when the changes are saved.
+    * Open `http://localhost:3123/health` in a browser to verify that the server is running.
+    * Open `http://localhost:3123/graphql` in a browser to see the Apollo Playground.
         * Requires Authentication. See Example GraphQL Queries and Mutations / Authentication below.
-    1. `Ctrl-c` to stop.
+    * `Ctrl-c` to stop.
 
 ## Example GraphQL Queries and Mutations
 
@@ -245,7 +230,7 @@ For each of the following queries and mutations, you'll need to include the foll
 
 ### List Pets
 
-Query
+**Query**
 ```graphql
 query Pets($sort: String, $query: String, $pageNumber: Int, $pageSize: Int) {
   pets(sort: $sort, query: $query, pageNumber: $pageNumber, pageSize: $pageSize) {
@@ -260,7 +245,7 @@ query Pets($sort: String, $query: String, $pageNumber: Int, $pageSize: Int) {
 }
 ```
 
-Variables
+**Variables**
 ```json
 {
 	"pageNumber": 0,
@@ -270,7 +255,7 @@ Variables
 
 ### Get Pet
 
-Query
+**Query**
 ```graphql
 query Pets($id: String!) {
   pet(id: $id) {
@@ -282,7 +267,7 @@ query Pets($id: String!) {
 }
 ```
 
-Variables
+**Variables**
 ```json
 {
 	"id": "{pet-id}"
@@ -291,7 +276,7 @@ Variables
 
 ### Delete Pet
 
-Mutation
+**Mutation**
 ```graphql
 mutation Pets($id: String!) {
   deletePet(id: $id) {
@@ -300,7 +285,7 @@ mutation Pets($id: String!) {
 }
 ```
 
-Variables
+**Variables**
 ```json
 {
 	"id": "{pet-id}"
@@ -309,7 +294,7 @@ Variables
 
 ### Create Pet
 
-Mutation
+**Mutation**
 ```graphql
 mutation Pets($newPet: NewPet!) {
   createPet(pet: $newPet) {
@@ -321,7 +306,7 @@ mutation Pets($newPet: NewPet!) {
 }
 ```
 
-Variables
+**Variables**
 ```json
 {
 	"newPet": {
@@ -333,7 +318,7 @@ Variables
 
 ### Update Pet
 
-Mutation
+**Mutation**
 ```graphql
 mutation Pets($id: String! $updatedPet: UpdatedPet!) {
   updatePet(id: $id pet: $updatedPet) {
@@ -345,7 +330,7 @@ mutation Pets($id: String! $updatedPet: UpdatedPet!) {
 }
 ```
 
-Variables
+**Variables**
 ```json
 {
 	"id": "{pet-id}",
@@ -358,41 +343,32 @@ Variables
 ## Docker
 
 ### To build the Docker image
+
 This tags your docker image as `xilution-graphql-backend-example`.
 
 1. Run `yarn docker:build`.
 
 ### To run the Docker image locally
-Uses `docker-compose` to start an NGINX reverse proxy and your docker image.
 
 1. Run `yarn docker:start`.
-
-    1. Open `http://localhost/health` to verify that the server is running.
-    1. Because the Docker image was build in production mode, the Apollo Playground is not available.
-    1. The GraphQL endpoint can by accessed at `http://localhost/graphql`.
+    * Open `http://localhost/health` to verify that the server is running.
+    * Because the Docker image was build in production mode, the Apollo Playground is not available.
+    * The GraphQL endpoint can by accessed at `http://localhost/graphql`.
 
 ### To stop the Docker image
 
 1. Run `yarn docker:stop`.
 
 ### To publish the Docker image to Docker Hub
+
 You'll need a [Docker Hub](https://hub.docker.com/) account to execute the following.
 
 1. Run `yarn docker:publish` to push the image to your Docker Hub account.
 
 ## Xilution Fox
-Xilution [Fox](https://products.xilution.com/integration/fox) is a managed API hosting solution that uses Docker to instantiate API server instances.
+
 Fox can pull a Docker image from your Docker Hub account.
 To grant Fox pull access the Docker image, either make the image public or add `tbrunia` as a [collaborator](https://docs-stage.docker.com/v17.12/docker-hub/repos/#collaborators-and-their-role).
-
-### Activate Fox
-
-Fox must be activated on your Xilution Account before it's available for use.
-
-1. Run `yarn xln:fox:activate`.
-
-* To see the Fox activation status, run `yarn xln:fox:show-activation` to see the Fox activation status.
-* To deactivate Fox, run `yarn xln:fox:deactivate`.
 
 ### Create a Fox Instance
 
@@ -409,23 +385,25 @@ Likewise, you deprovision a Fox Instance to stop your API.
 
 1. Run `yarn xln:provision-fox-instance`, to provision the Fox instance.
 1. Run `yarn xln:show-fox-instance-status`, to see the status of your Fox instance.
-It can take up to 5 minutes to fully provision your Fox instance.
-Provisioning is complete when you see the following.
-    ```json
-    {
-       "status": "CREATE_COMPLETE"
-    }
-   ```
-Now you can access the GraphQL Example running on Fox.
+    * It can take up to 5 minutes to fully provision your Fox instance.
+    * Provisioning is complete when you see the following.
+        ```json
+        {
+           "status": "CREATE_COMPLETE"
+        }
+       ```
+    * Now you can access the GraphQL Example running on Fox.
 
 ### Access The GraphQL Example Running on Fox
 
 1. Run `cat .env | grep XILUTION_INSTANCE_ID` to see your Fox Instance ID.
 1. Open `https://{instance-id}.prod.fox.integration.xilution/health` in a browser to verify that the server is running.
-1. Because the Docker image was build in production mode, the Apollo Playground is not available.
+
+The Apollo Playground is not available when running in Fox because the Docker image was build in production mode, 
 1. The GraphQL endpoint can by accessed at `https://{your-fox-instance-id}.prod.fox.integration.xilution/graphql`.
 
 ### Restart the Fox Instance
+
 You can make changes to your API, build and redeploy using the following commands.
 
 1. Run `yarn docker:build`.
@@ -438,13 +416,13 @@ We recommend adding a version endpoint to your API and use it to determine when 
 
 1. Run `yarn xln:fox:deprovision-instance`, to deprovision the Fox instance.
 1. Run `yarn xln:fox:show-instance-status`, to see the status of your Fox instance.
-It can take up to 5 minutes to fully deprovision your Fox instance.
-Deprovisioning is complete when you see the following.
-    ```json
-    {
-       "status": "NOT_FOUND"
-    }
-   ```
+    * It can take up to 5 minutes to fully deprovision your Fox instance.
+    * Deprovisioning is complete when you see the following.
+        ```json
+        {
+           "status": "NOT_FOUND"
+        }
+       ```
 
 ### Delete the Fox Instance
 

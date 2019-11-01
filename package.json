@@ -20,7 +20,7 @@
         "xln:beagily:deactivate-for-sub-organization": "./scripts/beagily/xln-deactivate-for-sub-organization.sh",
         "xln:beagily:show-activation-for-sub-organization": "./scripts/beagily/xln-show-activation-for-sub-organization.sh",
         "xln:elephant:activate-for-account-organization": "./scripts/elephant/xln-activate-for-account-organization.sh",
-        "xln:elephant:create-organization": "./scripts/elephant/xln-create-organization.sh",
+        "xln:elephant:create-sub-organization": "./scripts/elephant/xln-create-sub-organization.sh",
         "xln:elephant:deactivate-for-account-organization": "./scripts/elephant/xln-deactivate-for-account-organization.sh",
         "xln:elephant:delete-organization": "./scripts/elephant/xln-delete-organization.sh",
         "xln:elephant:show-activation-for-account-organization": "./scripts/elephant/xln-show-activation-for-account-organization.sh",

@@ -142,11 +142,11 @@ Note: Requires Account Organization Authentication
 
 Note: Requires Account Organization Authentication
 
-1. Run `yarn xln:elephant:create-organization`.
+1. Run `yarn xln:elephant:create-sub-organization`.
 
 * To see your sub-organizations, run `yarn xln:elephant:show-organizations`.
-* To delete a sub-organization, run `yarn xln:elephant:delete-organization {xilution_sub_organization_id}`
-    * {xilution_sub_organization_id} is a sub-organization id.
+* To delete a sub-organization, run `yarn xln:elephant:delete-organization {sub-organization-id}`
+    * {sub-organization-id} is a sub-organization id.
 
 ### Sub-Organization Product Activation
 

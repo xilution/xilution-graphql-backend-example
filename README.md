@@ -31,7 +31,7 @@ An example demonstrating how to build a GraphQL backend server using Xilution's 
 
 **As:** a frontend app builder who creates apps for multiple clients.
 
-**I want:** a [GraphQL](https://graphql.org/) enabled API that restricts access to unknown users.
+**I want:** a [GraphQL](https://graphql.org/) enabled API that restricts access to only known users.
 
 **So that:** I can build a pet data management app for one of my clients.
 

@@ -1,8 +1,8 @@
-<h1 align="center" style="border-bottom: none;">xilution-graphql-backend-example</h1>
+<h1 style="border-bottom: none; text-align: center;">xilution-graphql-backend-example</h1>
 <p>
 An example demonstrating how to build a GraphQL backend server using Xilution's IAM Suite (Elephant, Rhino, Hippo and Zebra), Beagily and Fox.
 <p>
-<p align="center">
+<p style="text-align: center;">
   <a href="https://github.com/xilution/xilution-graphql-backend-example/issues">
     <img alt="Issues" src="https://img.shields.io/github/issues/xilution/xilution-graphql-backend-example.svg">
   </a>
@@ -16,12 +16,12 @@ An example demonstrating how to build a GraphQL backend server using Xilution's 
     <img alt="License" src="https://img.shields.io/github/license/xilution/xilution-graphql-backend-example.svg">
   </a>
 </p>
-<p align="center">
+<p style="text-align: center;">
   <a href="https://travis-ci.org/xilution/xilution-graphql-backend-example">
     <img alt="Travis" src="https://img.shields.io/travis/xilution/xilution-graphql-backend-example.svg">
   </a>
 </p>
-<p align="center">
+<p style="text-align: center;">
   <a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fxilution%2Fxilution-graphql-backend-example">
     <img alt="Tweet" src="https://img.shields.io/twitter/url/https/github.com/xilution/xilution-graphql-backend-example.svg?style=social">
   </a>
@@ -277,7 +277,7 @@ For each of the following queries and mutations, you'll need to include the foll
 ### List Pets
 
 **Query**
-```graphql
+```text
 query Pets($sort: String, $query: String, $pageNumber: Int, $pageSize: Int) {
   pets(sort: $sort, query: $query, pageNumber: $pageNumber, pageSize: $pageSize) {
     data: content {
@@ -292,17 +292,17 @@ query Pets($sort: String, $query: String, $pageNumber: Int, $pageSize: Int) {
 ```
 
 **Variables**
-```json
+```text
 {
-	"pageNumber": 0,
-	"pageSize": 10
+	"pageNumber": {page-number},
+	"pageSize": {page-size}
 }
 ```
 
 ### Get Pet
 
 **Query**
-```graphql
+```text
 query Pets($id: String!) {
   pet(id: $id) {
     id
@@ -314,7 +314,7 @@ query Pets($id: String!) {
 ```
 
 **Variables**
-```json
+```text
 {
 	"id": "{pet-id}"
 }
@@ -323,7 +323,7 @@ query Pets($id: String!) {
 ### Delete Pet
 
 **Mutation**
-```graphql
+```text
 mutation Pets($id: String!) {
   deletePet(id: $id) {
     id
@@ -332,7 +332,7 @@ mutation Pets($id: String!) {
 ```
 
 **Variables**
-```json
+```text
 {
 	"id": "{pet-id}"
 }
@@ -341,7 +341,7 @@ mutation Pets($id: String!) {
 ### Create Pet
 
 **Mutation**
-```graphql
+```text
 mutation Pets($newPet: NewPet!) {
   createPet(pet: $newPet) {
       id
@@ -353,7 +353,7 @@ mutation Pets($newPet: NewPet!) {
 ```
 
 **Variables**
-```json
+```text
 {
 	"newPet": {
 		"name": "{name}",
@@ -365,7 +365,7 @@ mutation Pets($newPet: NewPet!) {
 ### Update Pet
 
 **Mutation**
-```graphql
+```text
 mutation Pets($id: String! $updatedPet: UpdatedPet!) {
   updatePet(id: $id pet: $updatedPet) {
       id
@@ -377,7 +377,7 @@ mutation Pets($id: String! $updatedPet: UpdatedPet!) {
 ```
 
 **Variables**
-```json
+```text
 {
 	"id": "{pet-id}",
 	"updatedPet": {

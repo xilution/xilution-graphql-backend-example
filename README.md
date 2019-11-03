@@ -1,8 +1,8 @@
-<h1 style="border-bottom: none; text-align: center;">xilution-graphql-backend-example</h1>
+<h1>xilution-graphql-backend-example</h1>
 <p>
 An example demonstrating how to build a GraphQL backend server using Xilution's IAM Suite (Elephant, Rhino, Hippo and Zebra), Beagily and Fox.
 <p>
-<p style="text-align: center;">
+<p>
   <a href="https://github.com/xilution/xilution-graphql-backend-example/issues">
     <img alt="Issues" src="https://img.shields.io/github/issues/xilution/xilution-graphql-backend-example.svg">
   </a>
@@ -16,12 +16,12 @@ An example demonstrating how to build a GraphQL backend server using Xilution's 
     <img alt="License" src="https://img.shields.io/github/license/xilution/xilution-graphql-backend-example.svg">
   </a>
 </p>
-<p style="text-align: center;">
+<p>
   <a href="https://travis-ci.org/xilution/xilution-graphql-backend-example">
     <img alt="Travis" src="https://img.shields.io/travis/xilution/xilution-graphql-backend-example.svg">
   </a>
 </p>
-<p style="text-align: center;">
+<p>
   <a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fxilution%2Fxilution-graphql-backend-example">
     <img alt="Tweet" src="https://img.shields.io/twitter/url/https/github.com/xilution/xilution-graphql-backend-example.svg?style=social">
   </a>

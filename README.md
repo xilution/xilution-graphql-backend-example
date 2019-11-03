@@ -165,7 +165,7 @@ You'll authenticate to the portals with your Xilution account username and passw
 ### Environment Variables
 
 1. Run `touch .env` to create a new environment variables file.
-1. Run `echo "XILUTION_ENVIRONMENT={environment}" >> .env` to add your environment preference to the environment an variables file (.env).
+1. Run `echo "XILUTION_ENVIRONMENT={environment}" >>.env` to add your environment preference to the environment an variables file (.env).
     * {environment} is a Xilution environment. One of 'test' or 'prod'.
 
 ### Account Organization Authentication
@@ -411,12 +411,14 @@ You'll need a [Docker Hub](https://hub.docker.com/) account to execute the follo
 
 1. Run `yarn docker:publish` to push the image to your Docker Hub account.
 
-## Xilution Fox
+## Host on Xilution Fox
 
 Fox can pull a Docker image from your Docker Hub account.
 To grant Fox pull access the Docker image, either make the image public or add `tbrunia` as a [collaborator](https://docs-stage.docker.com/v17.12/docker-hub/repos/#collaborators-and-their-role).
 
 ### Create a Fox Instance
+
+Note: Requires Account Organization Authentication
 
 A Fox Instance contains data that instructs Fox on how to run your Docker image.
 You provision a Fox Instance to start your API.
@@ -425,9 +427,11 @@ Likewise, you deprovision a Fox Instance to stop your API.
 1. Run `yarn xln:fox:create-instance`.
 
 * To see your instances, run `yarn xln:fox:show-instances`.
-* To delete a instance, run `yarn xln:fox:delete-instance {instance-id}`.
+* To delete a instance, run `yarn xln:fox:delete-instance {fox-instance-id}`.
 
 ### Provision the Fox Instance
+
+Note: Requires Account Organization Authentication
 
 1. Run `yarn xln:provision-fox-instance`, to provision the Fox instance.
 1. Run `yarn xln:show-fox-instance-status`, to see the status of your Fox instance.
@@ -443,12 +447,14 @@ Likewise, you deprovision a Fox Instance to stop your API.
 ### Access The GraphQL Example Running on Fox
 
 1. Run `cat .env | grep XILUTION_INSTANCE_ID` to see your Fox Instance ID.
-1. Open `https://{instance-id}.prod.fox.integration.xilution/health` in a browser to verify that the server is running.
+1. Open `https://{fox-instance-id}.prod.fox.integration.xilution/health` in a browser to verify that the server is running.
 
 The Apollo Playground is not available when running in Fox because the Docker image was build in production mode, 
 1. The GraphQL endpoint can by accessed at `https://{your-fox-instance-id}.prod.fox.integration.xilution/graphql`.
 
 ### Restart the Fox Instance
+
+Note: Requires Account Organization Authentication
 
 You can make changes to your API, build and redeploy using the following commands.
 
@@ -459,6 +465,8 @@ You can make changes to your API, build and redeploy using the following command
 We recommend adding a version endpoint to your API and use it to determine when a new version of your API has been deployed.
 
 ### Deprovision the Fox Instance
+
+Note: Requires Account Organization Authentication
 
 1. Run `yarn xln:fox:deprovision-instance`, to deprovision the Fox instance.
 1. Run `yarn xln:fox:show-instance-status`, to see the status of your Fox instance.
@@ -472,7 +480,9 @@ We recommend adding a version endpoint to your API and use it to determine when 
 
 ### Delete the Fox Instance
 
-1. Run `yarn xln:fox:delete-instance {instance-id}`, to delete the Fox instance.
+Note: Requires Account Organization Authentication
+
+1. Run `yarn xln:fox:delete-instance {fox-instance-id}`, to delete the Fox instance.
 
 ---
 Copyright 2019 Teapot, LLC.  

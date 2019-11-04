@@ -19,19 +19,19 @@ if [[ -z "${XILUTION_SUB_ORGANIZATION_ID}" ]]; then
   exit 1
 fi
 
-if [[ -z "${XILUTION_INSTANCE_ID}" ]]; then
-  echo "XILUTION_INSTANCE_ID not found in .env"
+if [[ -z "${XILUTION_FOX_INSTANCE_ID}" ]]; then
+  echo "XILUTION_FOX_INSTANCE_ID not found in .env"
   exit 1
 fi
 
 environment=${XILUTION_ENVIRONMENT}
 access_token=${XILUTION_ACCOUNT_ACCESS_TOKEN}
 sub_organization_id=${XILUTION_SUB_ORGANIZATION_ID}
-instance_id=${XILUTION_INSTANCE_ID}
+fox_instance_id=${XILUTION_FOX_INSTANCE_ID}
 
 response=$(curl -s \
   -X GET \
   -H "Authorization: Bearer ${access_token}" \
-  "https://${environment}.fox.integration.api.xilution.com/organizations/${sub_organization_id}/instances/${instance_id}/status")
+  "https://${environment}.fox.integration.api.xilution.com/organizations/${sub_organization_id}/instances/${fox_instance_id}/status")
 
 echo "${response}"

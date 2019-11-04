@@ -467,10 +467,10 @@ Note: Requires Account Organization Authentication
 ### Access The GraphQL Example Running on Fox
 
 1. Run `cat .env | grep XILUTION_FOX_INSTANCE_ID` to see your Fox Instance ID.
-1. Open `https://{fox-instance-id}.prod.fox.integration.xilution/health` in a browser to verify that the server is running.
+1. Open `https://{fox-instance-id}.prod.fox.integration.xilution.com/health` in a browser to verify that the server is running.
 
 The Apollo Playground is not available when running in Fox because the Docker image was build in production mode, 
-1. The GraphQL endpoint can by accessed at `https://{your-fox-instance-id}.prod.fox.integration.xilution/graphql`.
+1. The GraphQL endpoint can by accessed at `https://{fox-instance-id}.prod.fox.integration.xilution.com/graphql`.
 
 ### Restart the Fox Instance
 

@@ -471,6 +471,7 @@ Note: Requires Account Organization Authentication
 
 The Apollo Playground is not available when running in Fox because the Docker image was build in production mode, 
 1. The GraphQL endpoint can by accessed at `https://{fox-instance-id}.prod.fox.integration.xilution.com/graphql`.
+    * Requires Authentication. See Example GraphQL Queries and Mutations / Authentication above.
 
 ### Restart the Fox Instance
 

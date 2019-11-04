@@ -480,7 +480,7 @@ Note: Requires Account Organization Authentication
 You can make changes to your API, build and redeploy using the following commands.
 
 1. Run `yarn docker:build`.
-1. Run `yarn docker:publish` to push the image to your Docker Hub account.
+1. Run `yarn docker:publish {docker_hub_account}` to push the image to your Docker Hub account.
 1. Run `yarn xln:fox:restart-instance`, to restart the instance in the Fox managed API hosting service.
 
 We recommend adding a version endpoint to your API and use it to determine when a new version of your API has been deployed.

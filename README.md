@@ -4,13 +4,13 @@ An example demonstrating how to build a GraphQL backend using...
 <p>
 <ul>
     <li>
-        Xilution's IAM Suite (<a href="https://products.xilution.com/basics/elephant">Elephant</a>, <a href="https://products.xilution.com/basics/hippo">Hippo</a>, <a href="https://products.xilution.com/basics/rhino">Rhino</a>, <a href="https://products.xilution.com/basics/zebra">Zebra</a>)
+        Xilution's IAM Suite (<a href="https://products.xilution.com/api/catalog/basics/elephant">Elephant</a>, <a href="https://products.xilution.com/api/catalog/basics/hippo">Hippo</a>, <a href="https://products.xilution.com/api/catalog/basics/rhino">Rhino</a>, <a href="https://products.xilution.com/api/catalog/basics/zebra">Zebra</a>)
     </li>
     <li>
-        Xilution's Data Storage Service (<a href="https://products.xilution.com/basics/beagily">Beagily</a>)
+        Xilution's Data Storage Service (<a href="https://products.xilution.com/api/catalog/basics/beagily">Beagily</a>)
     </li>
     <li>
-        Xilution's API Hosting Service (<a href="https://products.xilution.com/integration/fox">Fox</a>)
+        Xilution's API Hosting Service (<a href="https://products.xilution.com/api/catalog/integration/fox">Fox</a>)
     </li>
 </ul>
 <p>
@@ -74,10 +74,10 @@ An example demonstrating how to build a GraphQL backend using...
     +-----------+   +-----------+      +-------------+
 ```
 
-* [Elephant](https://products.xilution.com/basics/elephant)
-* [Hippo](https://products.xilution.com/basics/hippo)
-* [Rhino](https://products.xilution.com/basics/rhino)
-* [Fox](https://products.xilution.com/integration/fox)
+* [Elephant](https://products.xilution.com/api/catalog/basics/elephant)
+* [Hippo](https://products.xilution.com/api/catalog/basics/hippo)
+* [Rhino](https://products.xilution.com/api/catalog/basics/rhino)
+* [Fox](https://products.xilution.com/api/catalog/integration/fox)
 
 When you create a Xilution account, an Organization record is created for you.
 This is referred to as your "Account Organization" in the instructions below.
@@ -113,8 +113,8 @@ In this example, you'll associated a Fox instance with a Sub-Organization.
                                  +--------------+
 ```
 
-* [Zebra](https://products.xilution.com/basics/zebra)
-* [Beagily](https://products.xilution.com/basics/beagily) 
+* [Zebra](https://products.xilution.com/api/catalog/basics/zebra)
+* [Beagily](https://products.xilution.com/api/catalog/basics/beagily) 
 
 When you complete this example, you will create a GraphQL enabled API that supports the use case mentioned above.
 The API authorizes calls to it's `/graphql` endpoint by making `/oauth/authenticate` calls to Xilution Zebra with the Bearer token passed in the Authorization header of each request.
@@ -129,9 +129,9 @@ Xilution Beagily is a simple JSON data storage API that features integrated sear
 
 ## Features
 
-* Xilution's IAM Suite ([Elephant](https://products.xilution.com/basics/elephant), [Hippo](https://products.xilution.com/basics/hippo), [Rhino](https://products.xilution.com/basics/rhino) and [Zebra](https://products.xilution.com/basics/zebra)) for identity and access management.
-* Xilution [Fox](https://products.xilution.com/integration/fox) for API hosting.
-* Xilution [Beagily](https://products.xilution.com/basics/beagily) for data storage.
+* Xilution's IAM Suite ([Elephant](https://products.xilution.com/api/catalog/basics/elephant), [Hippo](https://products.xilution.com/api/catalog/basics/hippo), [Rhino](https://products.xilution.com/api/catalog/basics/rhino) and [Zebra](https://products.xilution.com/api/catalog/basics/zebra)) for identity and access management.
+* Xilution [Fox](https://products.xilution.com/api/catalog/integration/fox) for API hosting.
+* Xilution [Beagily](https://products.xilution.com/api/catalog/basics/beagily) for data storage.
 * [GraphQL](https://graphql.org/) enabled API running on [Hapi](https://github.com/hapijs/hapi) and the [Apollo Server](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-hapi).
 
 ## Prerequisites

@@ -29,7 +29,9 @@ access_token=${XILUTION_ACCOUNT_ACCESS_TOKEN}
 sub_organization_id=${XILUTION_SUB_ORGANIZATION_ID}
 instance_id=${XILUTION_INSTANCE_ID}
 
-curl -s \
+response=$(curl -s \
   -X GET \
   -H "Authorization: Bearer ${access_token}" \
-  "https://${environment}.fox.integration.api.xilution.com/organizations/${sub_organization_id}/instances/${instance_id}/status"
+  "https://${environment}.fox.integration.api.xilution.com/organizations/${sub_organization_id}/instances/${instance_id}/status")
+
+echo "${response}"

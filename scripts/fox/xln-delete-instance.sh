@@ -30,7 +30,9 @@ access_token=${XILUTION_ACCOUNT_ACCESS_TOKEN}
 sub_organization_id=${XILUTION_SUB_ORGANIZATION_ID}
 instance_id=${1}
 
-curl -s \
+response=$(curl -s \
   -X DELETE \
   -H "Authorization: Bearer ${access_token}" \
-  "https://${environment}.fox.integration.api.xilution.com/organizations/${sub_organization_id}/instances/${instance_id}"
+  "https://${environment}.fox.integration.api.xilution.com/organizations/${sub_organization_id}/instances/${instance_id}")
+
+echo "${response}"

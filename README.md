@@ -409,8 +409,11 @@ mutation Pets($id: String! $updatedPet: UpdatedPet!) {
 
 ## Host on Xilution Fox
 
-Fox can pull a Docker image from your Docker Hub account.
-To grant Fox pull access the Docker image, either make the image public or add `tbrunia` as a [collaborator](https://docs-stage.docker.com/v17.12/docker-hub/repos/#collaborators-and-their-role).
+Fox sources Docker images from [Docker Hub](https://hub.docker.com/).
+You grant Fox access to a Docker image hosted in Docker Hub in one of two ways.
+
+1. Make the image public.
+1. Add `tbrunia` as a [collaborator](https://docs-stage.docker.com/v17.12/docker-hub/repos/#collaborators-and-their-role).
 
 ### Build the Docker image
 

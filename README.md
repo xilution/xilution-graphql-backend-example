@@ -48,6 +48,9 @@ An example demonstrating how to build a GraphQL backend using...
 
 ## Xilution Product Hierarchy
 
+Here's a quick overview of the Xilution products highlighted in this example.
+For a complete directory of Xilution products, see https://prod.products.xilution.com/.
+
 ```text
                  +------------------+
                  | Xilution Account |

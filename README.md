@@ -268,8 +268,7 @@ Note: Requires Sub-Organization Authentication
 
 ## Running Locally
 
-1. Run `export $(grep -v '^#' .env | xargs)`.
-    * Requires the Set Up step to be complete.
+1. Run `export $(grep -v '^#' .env | xargs)` to export environment variables into your current terminal session.
 1. Run `yarn start`.
     * You can make changes to the source code and nodemon will automatically restart the server when the changes are saved.
     * Open http://localhost:3123/health in a browser to verify that the server is running.
@@ -421,6 +420,7 @@ This tags your docker image as `xilution-graphql-backend-example`.
 
 ### To run the Docker image locally
 
+1. Run `export $(grep -v '^#' .env | xargs)` to export environment variables into your current terminal session.
 1. Run `yarn docker:start`.
     * Open `http://localhost:3123/health` to verify that the server is running.
     * Because the Docker image was build in production mode, the Apollo Playground is not available.

@@ -19,6 +19,7 @@ services:
             - XILUTION_ENVIRONMENT
             - XILUTION_API_CLIENT_ID
             - XILUTION_API_CLIENT_SECRET
+            - XILUTION_SUB_ORGANIZATION_ID
         image: xilution-graphql-backend-example
         ports:
             - '3123'

@@ -66,6 +66,10 @@ post_response=$(curl -sSL -D - \
       {
         \"name\": \"XILUTION_API_CLIENT_SECRET\",
         \"value\": \"${client_secret}\"
+      },
+      {
+        \"name\": \"XILUTION_SUB_ORGANIZATION_ID\",
+        \"value\": \"${sub_organization_id}\"
       }
     ],
     \"image\": \"${docker_hub_account}/xilution-graphql-backend-example\",

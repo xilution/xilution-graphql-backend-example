@@ -6,11 +6,11 @@ const SUB_DOMAIN = `zebra.basics.api.xilution.com`;
 
 export const getTokenWithClientCredentials = async (
     env: string,
-    organizationId: string,
+    subOrganizationId: string,
     clientId: string,
     clientSecret: string,
 ): Promise<AxiosResponse<IXilutionTokenResponse>> => await axios.post(
-    `https://${env}.${SUB_DOMAIN}/organizations/${organizationId}/oauth/token`,
+    `https://${env}.${SUB_DOMAIN}/organizations/${subOrganizationId}/oauth/token`,
     {
         client_id: clientId,
         client_secret: clientSecret,
@@ -24,10 +24,10 @@ export const getTokenWithClientCredentials = async (
 
 export const authenticate = (
     env: string,
-    organizationId: string,
+    subOrganizationId: string,
     accessToken: string,
 ): Promise<AxiosResponse<IXilutionAuthenticationResponse>> => axios.post(
-    `https://${env}.${SUB_DOMAIN}/organizations/${organizationId}/oauth/authenticate`, {
+    `https://${env}.${SUB_DOMAIN}/organizations/${subOrganizationId}/oauth/authenticate`, {
         access_token: accessToken,
     },
     {

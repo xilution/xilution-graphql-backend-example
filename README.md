@@ -146,8 +146,8 @@ Each Beagily record has an owning user and an access policy which is checked aga
 
 1. Create a Xilution Account
     1. Open [https://prod.register.xilution.com](https://prod.register.xilution.com) to create a Xilution **Prod** account.
-        * A valid credit card must be associated with your account to use Xilution Products in Prod.
-          You can use the [Prod environment Xilution Admin Portal](https://prod.portal.xilution.com) to add a Credit Card to your account.
+        * :mega: A valid credit card :credit_card: must be associated with your Xilution Account to use Xilution Products in Prod.
+          Use the [Prod environment Xilution Admin Portal](https://prod.portal.xilution.com) to add a Credit Card to your Xilution Account.
     1. Open [https://test.register.xilution.com](https://test.register.xilution.com) to create a Xilution **Test** account.
         * Xilution Test and Prod accounts are not synchronized.
         * Some Xilution products have usage and time to live restrictions in our Test environment.
@@ -212,6 +212,8 @@ Note: Requires Account Organization Authentication
 
 1. Run `yarn xln:elephant:create-sub-organization`.
 
+* :mega: A valid credit card :credit_card: must be associated with your Xilution Sub-Organization to use Xilution Products in Prod.
+  Use the [Prod environment Xilution Elephant Portal](https://prod.portal.elephant.basics.xilution.com/) to add a Credit Card to your Xilution Sub-Organization.
 * To see your Sub-Organizations, run `yarn xln:elephant:show-organizations`.
 * To delete a Sub-Organization, run `yarn xln:elephant:delete-organization {sub-organization-id}`
     * {sub-organization-id} is a Sub-Organization id.
@@ -243,7 +245,7 @@ Note: Requires Account Organization Authentication
 * To see the Sub-Organization's users run, `yarn xln:rhino:show-users`.
 * To delete a Sub-Organization's user run, `yarn xln:rhino:delete-user {user-id}`.
 
-### Add a Client to the Sub-Organization
+### Add an API Client to the Sub-Organization
 
 Note: Requires Account Organization Authentication
 

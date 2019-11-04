@@ -408,9 +408,12 @@ mutation Pets($id: String! $updatedPet: UpdatedPet!) {
 }
 ```
 
-## Docker
+## Host on Xilution Fox
 
-### To build the Docker image
+Fox can pull a Docker image from your Docker Hub account.
+To grant Fox pull access the Docker image, either make the image public or add `tbrunia` as a [collaborator](https://docs-stage.docker.com/v17.12/docker-hub/repos/#collaborators-and-their-role).
+
+### Build the Docker image
 
 This tags your docker image as `xilution-graphql-backend-example`.
 
@@ -427,16 +430,11 @@ This tags your docker image as `xilution-graphql-backend-example`.
 
 1. Run `yarn docker:stop`.
 
-### To publish the Docker image to Docker Hub
+### Publish the Docker image to Docker Hub
 
 You'll need a [Docker Hub](https://hub.docker.com/) account to execute the following.
 
 1. Run `yarn docker:publish` to push the image to your Docker Hub account.
-
-## Host on Xilution Fox
-
-Fox can pull a Docker image from your Docker Hub account.
-To grant Fox pull access the Docker image, either make the image public or add `tbrunia` as a [collaborator](https://docs-stage.docker.com/v17.12/docker-hub/repos/#collaborators-and-their-role).
 
 ### Create a Fox Instance
 

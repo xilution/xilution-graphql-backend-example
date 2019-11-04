@@ -271,7 +271,7 @@ Note: Requires Sub-Organization Authentication
 1. Run `export $(grep -v '^#' .env | xargs)` to export environment variables into your current terminal session.
 1. Run `yarn start`.
     * You can make changes to the source code and nodemon will automatically restart the server when the changes are saved.
-    * Open http://localhost:3123/health in a browser to verify that the server is running.
+    * Open http://localhost:3123/version in a browser to verify that the server is running.
     * Open http://localhost:3123/graphql in a browser to see the Apollo Playground.
         * Requires Authentication. See Example GraphQL Queries and Mutations / Authentication below.
     * `Ctrl-c` to stop.
@@ -422,7 +422,7 @@ This tags your docker image as `xilution-graphql-backend-example`.
 
 1. Run `export $(grep -v '^#' .env | xargs)` to export environment variables into your current terminal session.
 1. Run `yarn docker:start`.
-    * Open `http://localhost:3123/health` to verify that the server is running.
+    * Open `http://localhost:3123/version` to verify that the server is running.
     * Because the Docker image was build in production mode, the Apollo Playground is not available.
     * The GraphQL endpoint can by accessed at `http://localhost:3123/graphql`.
 
@@ -467,10 +467,10 @@ Note: Requires Account Organization Authentication
 ### Access The GraphQL Example Running on Fox
 
 1. Run `cat .env | grep XILUTION_FOX_INSTANCE_ID` to see your Fox Instance ID.
-1. Open `https://{fox-instance-id}.prod.fox.integration.xilution.com/health` in a browser to verify that the server is running.
+1. Open `https://{fox-instance-id}.{environment}.fox.integration.xilution.com/version` in a browser to verify that the server is running.
 
 The Apollo Playground is not available when running in Fox because the Docker image was build in production mode, 
-1. The GraphQL endpoint can by accessed at `https://{fox-instance-id}.prod.fox.integration.xilution.com/graphql`.
+1. The GraphQL endpoint can by accessed at `https://{fox-instance-id}.{environment}.fox.integration.xilution.com/graphql`.
     * Requires Authentication. See Example GraphQL Queries and Mutations / Authentication above.
 
 ### Restart the Fox Instance

@@ -204,7 +204,7 @@ Note: Requires Account Organization Authentication
 1. Run `yarn xln:fox:activate-for-account-organization`.
 
 * Run `yarn xln:{product-name}:show-activation-for-account-organization` to see the status of an account organization's product activation.
-    * {product-name} is one of `elephant`, `hippo` or `rhino`.
+    * {product-name} is one of `elephant`, `hippo`, `rhino` or `fox`.
 * Run `yarn xln:{product-name}:deactivate-for-account-organization` to deactivate a product for an account organization.
 
 ### Create a Xilution Sub-Organization
@@ -227,7 +227,7 @@ Note: Requires Account Organization Authentication
 1. Run `yarn xln:beagily:activate-for-sub-organization`.
 
 * Run `yarn xln:{product-name}:show-activation-for-sub-organization` to see the status of a Sub-Organization's product activation.
-    * {product-name} is one of `zebra`, `beagily` or `fox`.
+    * {product-name} is one of `zebra` or `beagily`.
 * Run `yarn xln:{product-name}:deactivate-for-sub-organization` to deactivate a product for a Sub-Organization.
 
 ### Add an API User to the Sub-Organization

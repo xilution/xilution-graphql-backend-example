@@ -453,8 +453,8 @@ Likewise, you deprovision a Fox Instance to stop your API.
 
 Note: Requires Account Organization Authentication
 
-1. Run `yarn xln:provision-fox-instance`, to provision the Fox instance.
-1. Run `yarn xln:show-fox-instance-status`, to see the status of your Fox instance.
+1. Run `yarn xln:fox:provision-instance`, to provision the Fox instance.
+1. Run `yarn xln:fox:show-instance-status`, to see the status of your Fox instance.
     * It can take up to 5 minutes to fully provision your Fox instance.
     * Provisioning is complete when you see the following.
         ```json

@@ -136,22 +136,23 @@ Each Beagily record has an owning user and an access policy which is checked aga
 * Xilution's IAM Suite ([Elephant](https://products.xilution.com/api/catalog/basics/elephant), [Hippo](https://products.xilution.com/api/catalog/basics/hippo), [Rhino](https://products.xilution.com/api/catalog/basics/rhino) and [Zebra](https://products.xilution.com/api/catalog/basics/zebra)) for identity and access management.
 * Xilution [Fox](https://products.xilution.com/api/catalog/integration/fox) for API hosting.
 * Xilution [Beagily](https://products.xilution.com/api/catalog/basics/beagily) for data storage.
-* [GraphQL](https://graphql.org/) enabled API running on [Hapi](https://github.com/hapijs/hapi) and the [Apollo Server](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-hapi).
+* [GraphQL](https://graphql.org/) enabled API running on a [Hapi](https://github.com/hapijs/hapi) (NodeJS) server using the [Apollo Server](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-hapi).
 
 ## Prerequisites
 
+1. Create a Xilution Account
+    1. Open [https://prod.register.xilution.com](https://prod.register.xilution.com) to create a Xilution **Prod** account.
+        * A valid credit card must be associated with your account to use Xilution Products in Prod.
+          You can use the [Prod environment Xilution Admin Portal](https://prod.portal.xilution.com) to add a Credit Card to your account.
+    1. Open [https://test.register.xilution.com](https://test.register.xilution.com) to create a Xilution **Test** account.
+        * Xilution Test and Prod accounts are not synchronized.
+        * Some Xilution products have usage and time to live restrictions in our Test environment.
+          See [product documentation](https://test.products.xilution.com/) for complete restriction details.
 1. Install Docker Desktop: https://www.docker.com/products/docker-desktop
 1. Install NVM: https://github.com/nvm-sh/nvm
 1. Install Yarn: https://yarnpkg.com
 1. Install jq: https://stedolan.github.io/jq/
 1. Install cURL: https://curl.haxx.se/
-1. Create a Xilution Account
-    1. Open [https://prod.register.xilution.com](https://prod.register.xilution.com) to create a Xilution Prod account.
-    1. Open [https://test.register.xilution.com](https://test.register.xilution.com) to create a Xilution Test account.
-    
-    * A valid credit card must be associated with your account to use of Xilution Products in Prod.
-      You can use the Xilution Admin Portal to add a Credit Card to your account.
-    * Xilution Test and Prod accounts are not synchronized.
 
 ## General
 

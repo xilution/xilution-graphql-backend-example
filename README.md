@@ -423,7 +423,7 @@ This tags your docker image as `xilution-graphql-backend-example`.
 1. Run `export $(grep -v '^#' .env | xargs)` to export environment variables into your current terminal session.
 1. Run `yarn docker:start`.
     * Open `http://localhost:3123/version` to verify that the server is running.
-    * Because the Docker image was build in production mode, the Apollo Playground is not available.
+    * Because the Docker image was built in production mode, the Apollo Playground is not available.
     * The GraphQL endpoint can by accessed at `http://localhost:3123/graphql`.
 
 ### To stop the Docker image
@@ -469,7 +469,7 @@ Note: Requires Account Organization Authentication
 1. Run `cat .env | grep XILUTION_FOX_INSTANCE_ID` to see your Fox Instance ID.
 1. Open `https://{fox-instance-id}.{environment}.fox.integration.xilution.com/version` in a browser to verify that the server is running.
 
-The Apollo Playground is not available when running in Fox because the Docker image was build in production mode, 
+The Apollo Playground is not available when running in Fox because the Docker image was built in production mode, 
 1. The GraphQL endpoint can by accessed at `https://{fox-instance-id}.{environment}.fox.integration.xilution.com/graphql`.
     * Requires Authentication. See Example GraphQL Queries and Mutations / Authentication above.
 

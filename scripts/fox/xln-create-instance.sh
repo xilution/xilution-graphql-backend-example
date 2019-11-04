@@ -60,6 +60,10 @@ post_response=$(curl -sSL -D - \
     \"containerPort\": \"3123\",
     \"environment\": [
       {
+        \"name\": \"XILUTION_ENVIRONMENT\",
+        \"value\": \"${environment}\"
+      },
+      {
         \"name\": \"XILUTION_API_CLIENT_ID\",
         \"value\": \"${client_id}\"
       },

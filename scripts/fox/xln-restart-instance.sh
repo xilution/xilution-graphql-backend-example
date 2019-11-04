@@ -34,6 +34,6 @@ response=$(curl -s \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer ${access_token}" \
   -d "{}" \
-  "https://${environment}.fox.integration.api.xilution.com/organizations/${sub_organization_id}/instances/${fox_instance_id}/restart")
+  "https://${environment}.fox.integration.api.xilution.com/organizations/${sub_organization_id}/instances/${fox_instance_id}/update-image")
 
 echo "${response}"

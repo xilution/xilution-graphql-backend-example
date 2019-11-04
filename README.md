@@ -434,7 +434,7 @@ This tags your docker image as `xilution-graphql-backend-example`.
 
 You'll need a [Docker Hub](https://hub.docker.com/) account to execute the following.
 
-1. Run `yarn docker:publish` to push the image to your Docker Hub account.
+1. Run `yarn docker:publish {docker_hub_account}` to push the image to your Docker Hub account.
 
 ### Create a Fox Instance
 

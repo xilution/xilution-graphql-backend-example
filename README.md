@@ -422,9 +422,9 @@ This tags your docker image as `xilution-graphql-backend-example`.
 ### To run the Docker image locally
 
 1. Run `yarn docker:start`.
-    * Open `http://localhost/health` to verify that the server is running.
+    * Open `http://localhost:3123/health` to verify that the server is running.
     * Because the Docker image was build in production mode, the Apollo Playground is not available.
-    * The GraphQL endpoint can by accessed at `http://localhost/graphql`.
+    * The GraphQL endpoint can by accessed at `http://localhost:3123/graphql`.
 
 ### To stop the Docker image
 

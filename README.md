@@ -38,6 +38,10 @@ An example demonstrating how to build a GraphQL backend using...
   </a>
 </p>
 
+## Time Requirement
+
+I will take about thirty (30) minutes to run through this example.
+
 ## Use Case
 
 **As:** a frontend app builder who creates apps for multiple clients.
@@ -82,7 +86,7 @@ For a complete directory of Xilution products, see https://prod.products.xilutio
 * [Rhino](https://products.xilution.com/api/catalog/basics/rhino)
 * [Fox](https://products.xilution.com/api/catalog/integration/fox)
 
-When you create a Xilution account, an Organization record is created for you.
+When you create a Xilution Account, an Organization record is created for you.
 This is referred to as your "Account Organization" in the instructions below.
 As a frontend app builder who supports multiple clients, you can create multiple Sub-Organizations via Xilution Elephant.
 One for each client you support.
@@ -168,7 +172,7 @@ Each Beagily record has an owning user and an access policy which is checked aga
 
 The following instructions are enabled via a large suite of scripts found in the [scripts](./scripts) folder of this repo.
 You can see the changes made to your account via the scripts through our product portals.
-You'll authenticate to the portals with your Xilution account username and password.
+You'll authenticate to the portals with your Xilution Account username and password.
 
 | Portal   | Prod                                                      | Test                                                      |
 |----------|-----------------------------------------------------------|-----------------------------------------------------------|
@@ -181,13 +185,13 @@ You'll authenticate to the portals with your Xilution account username and passw
 ### Environment Variables
 
 1. Run `touch .env` to create a new environment variables file.
-1. Run `echo "XILUTION_ENVIRONMENT={environment}" >>.env` to add your environment preference to the environment an variables file (.env).
+1. Run `echo "XILUTION_ENVIRONMENT={environment}" >>.env` to add your environment preference to the environment variables file (.env).
     * {environment} is a Xilution environment. One of 'test' or 'prod'.
 
 ### Account Organization Authentication
 
 1. Run `yarn xln:authentication:token-from-user-credentials`.
-    * You will be prompted for your Xilution account username and password.
+    * You will be prompted for your Xilution Account username and password.
     * The access token saved to the environment variables file will expire in one hour.
 
 ### Account Organization Product Activation

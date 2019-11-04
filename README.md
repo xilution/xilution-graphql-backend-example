@@ -444,7 +444,7 @@ A Fox Instance contains data that instructs Fox on how to run your Docker image.
 You provision a Fox Instance to start your API.
 Likewise, you deprovision a Fox Instance to stop your API.
 
-1. Run `yarn xln:fox:create-instance`.
+1. Run `yarn xln:fox:create-instance {docker_hub_account}`.
 
 * To see your instances, run `yarn xln:fox:show-instances`.
 * To delete a instance, run `yarn xln:fox:delete-instance {fox-instance-id}`.

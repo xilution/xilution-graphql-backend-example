@@ -1,7 +1,18 @@
 <h1>xilution-graphql-backend-example</h1>
 <p>
-An example demonstrating how to build a GraphQL backend server using Xilution's IAM Suite (Elephant, Rhino, Hippo and Zebra), Beagily and Fox.
+An example demonstrating how to build a GraphQL backend using...
 <p>
+<ul>
+    <li>
+        Xilution's IAM Suite (<a href="https://products.xilution.com/basics/elephant">Elephant</a>, <a href="https://products.xilution.com/basics/hippo">Hippo</a>, <a href="https://products.xilution.com/basics/rhino">Rhino</a>, <a href="https://products.xilution.com/basics/zebra">Zebra</a>)
+    </li>
+    <li>
+        Xilution's Data Storage Service (<a href="https://products.xilution.com/basics/beagily">Beagily</a>)
+    </li>
+    <li>
+        Xilution's API Hosting Service (<a href="https://products.xilution.com/integration/fox">Fox</a>)
+    </li>
+</ul>
 <p>
   <a href="https://github.com/xilution/xilution-graphql-backend-example/issues">
     <img alt="Issues" src="https://img.shields.io/github/issues/xilution/xilution-graphql-backend-example.svg">

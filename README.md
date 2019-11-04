@@ -201,6 +201,7 @@ Note: Requires Account Organization Authentication
 1. Run `yarn xln:elephant:activate-for-account-organization`.
 1. Run `yarn xln:hippo:activate-for-account-organization`.
 1. Run `yarn xln:rhino:activate-for-account-organization`.
+1. Run `yarn xln:fox:activate-for-account-organization`.
 
 * Run `yarn xln:{product-name}:show-activation-for-account-organization` to see the status of an account organization's product activation.
     * {product-name} is one of `elephant`, `hippo` or `rhino`.
@@ -224,7 +225,6 @@ Note: Requires Account Organization Authentication
 
 1. Run `yarn xln:zebra:activate-for-sub-organization`.
 1. Run `yarn xln:beagily:activate-for-sub-organization`.
-1. Run `yarn xln:fox:activate-for-sub-organization`.
 
 * Run `yarn xln:{product-name}:show-activation-for-sub-organization` to see the status of a Sub-Organization's product activation.
     * {product-name} is one of `zebra`, `beagily` or `fox`.

@@ -475,7 +475,7 @@ The Apollo Playground is not available when running in Fox because the Docker im
 
 ### Restart the Fox Instance
 
-Note: Requires Account Organization Authentication
+Note: Requires Account Organization Authentication and for the Fox instance to be provisioned.
 
 You can make changes to your API, build and redeploy using the following commands.
 

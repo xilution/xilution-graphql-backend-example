@@ -2,9 +2,9 @@ FROM mhart/alpine-node:10.16.3 as build
 
 WORKDIR /build
 
-COPY package.json yarn.lock /build/
+COPY package.json package-lock.json /build/
 
-RUN yarn install --frozen-lockfile && yarn cache clean
+RUN npm install
 
 COPY src /build/src
 COPY tsconfig.json /build
@@ -12,8 +12,8 @@ COPY tslint.json /build
 COPY scripts /build/scripts
 COPY webpack.config.js /build
 
-RUN yarn verify
-RUN yarn build
+RUN npm run verify
+RUN npm run build
 
 FROM mhart/alpine-node:10.16.3
 
